@@ -25,6 +25,15 @@ class Container
     }
 
     /**
+     * @param strin $key
+     * @throws \axy\errors\FieldNotExist
+     */
+    public function getUnknownField($key)
+    {
+        throw new \axy\errors\FieldNotExist($key, $this);
+    }
+
+    /**
      * @return string
      */
     public function __toString()
