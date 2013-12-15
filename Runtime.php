@@ -12,4 +12,10 @@ namespace axy\errors;
  */
 class Runtime extends \RuntimeException implements Error
 {
+    use helpers\ErrorTrait;
+
+    public function __construct($message = null, $code = 0, \Exception $previous = null)
+    {
+        $this->callErrorTrait($message, $code, $previous);
+    }
 }
