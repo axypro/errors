@@ -1,0 +1,4 @@
+errors
+======
+
+Exceptions in PHP
