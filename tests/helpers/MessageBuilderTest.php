@@ -38,7 +38,7 @@ class MessageBuilderTest extends \PHPUnit_Framework_TestCase
      */
     public function testTemplateMessage()
     {
-        $e = new CustomError(['a' => 2, 'b' => '2',], 4);
+        $e = new CustomError(['a' => 2, 'b' => '2'], 4);
         $this->assertSame('2 + 2 = 4', $e->getMessage());
     }
 
@@ -58,7 +58,7 @@ class MessageBuilderTest extends \PHPUnit_Framework_TestCase
      */
     public function testTemplateMessageReplaceCode()
     {
-        $e = new CustomError(['a' => 2, 'b' => '2', 'code' => 5,], 4);
+        $e = new CustomError(['a' => 2, 'b' => '2', 'code' => 5], 4);
         $this->assertSame('2 + 2 = 5', $e->getMessage());
     }
 }

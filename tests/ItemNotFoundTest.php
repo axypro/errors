@@ -6,6 +6,7 @@
 namespace axy\errors\tests;
 
 use axy\errors\ItemNotFound;
+use axy\errors\tests\nstst\Container;
 
 /**
  * @coversDefaultClass axy\errors\ItemNotFound
@@ -19,11 +20,24 @@ class ItemNotFoundTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreate()
     {
+        $container = new Container(5);
+        try {
+            $container->getUndefinedItem('qwe');
+            $this->fail('not thrown');
+        } catch (ItemNotFound $e) {
+        }
+        $this->assertSame('qwe', $e->getKey());
+        $this->assertSame($container, $e->getContainer());
+        $this->assertSame('Item "qwe" is not found in "Container#5"', $e->getMessage());
+    }
+
+    /**
+     * @covers ::__construct
+     */
+    public function testPrevious()
+    {
         $previous = new \RuntimeException('msg');
-        $e = new ItemNotFound('key', 'Container', $previous);
-        $this->assertSame('key', $e->getKey());
-        $this->assertSame('Container', $e->getContainer());
+        $e = new ItemNotFound('key', 'container', $previous);
         $this->assertSame($previous, $e->getPrevious());
-        $this->assertSame('Item "key" is not found in "Container"', $e->getMessage());
     }
 }

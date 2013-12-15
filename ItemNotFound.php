@@ -13,6 +13,11 @@ namespace axy\errors;
 class ItemNotFound extends Runtime
 {
     /**
+     * {@inheritdoc}
+     */
+    protected $defaultMessage = 'Item "{{ key }}" is not found in "{{ container }}"';
+
+    /**
      * Constructor
      *
      * @param string $key
@@ -23,7 +28,10 @@ class ItemNotFound extends Runtime
     {
         $this->key = $key;
         $this->container = $container;
-        $message = 'Item "'.$key.'" is not found in "'.$container.'"';
+        $message = [
+            'key' => $key,
+            'container' => $container,
+        ];
         parent::__construct($message, 0, $previous);
     }
 
