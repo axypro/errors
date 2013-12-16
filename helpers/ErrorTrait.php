@@ -13,10 +13,12 @@ namespace axy\errors\helpers;
 trait ErrorTrait
 {
     use MessageBuilder;
+    use TraceTruncate;
 
     public function callErrorTrait($message, $code, $previous)
     {
         $message = $this->createMessage($message, $code);
         parent::__construct($message, $code, $previous);
+        $this->truncateTrace();
     }
 }
