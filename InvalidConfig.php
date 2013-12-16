@@ -39,7 +39,7 @@ class InvalidConfig extends Logic
     /**
      * @reutrn string
      */
-    public function getConfigName()
+    final public function getConfigName()
     {
         return $this->configName;
     }
@@ -47,7 +47,7 @@ class InvalidConfig extends Logic
     /**
      * @return int
      */
-    public function getErrmsg()
+    final public function getErrmsg()
     {
         return $this->errmsg;
     }
