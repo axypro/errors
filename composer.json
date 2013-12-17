@@ -16,19 +16,13 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "axy/backtrace": "master-dev"
+        "axy/backtrace": "~0.0.1"
     },
     "autoload": {
         "psr-0": {
             "axy\\errors\\": ""
         }
     },
-    "target-dir": "axy/errors",
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/axypro/backtrace.git"
-        }
-    ]
+    "target-dir": "axy/errors"
 }
 
