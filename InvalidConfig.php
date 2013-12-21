@@ -15,7 +15,7 @@ class InvalidConfig extends Logic
     /**
      * {@inheritdoc}
      */
-    protected $defaultMessage = 'Config {{ config }} is invalid: "{{ errmsg }}"';
+    protected $defaultMessage = '{{ config }} has an invalid format: "{{ errmsg }}"';
 
     /**
      * Constructor

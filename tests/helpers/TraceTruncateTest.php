@@ -44,7 +44,7 @@ class TraceTruncateTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('axy\errors\Logic', $e);
         $this->assertInstanceOf('axy\errors\InvalidConfig', $e);
         $this->assertInstanceOf('\axy\errors\tests\nstst\errors\Error', $e);
-        $this->assertSame('Config Config is invalid: "errmsg"', $e->getMessage());
+        $this->assertSame('Config has an invalid format: "errmsg"', $e->getMessage());
         $this->assertSame($context->file, $e->getFile());
         $this->assertSame($context->line, $e->getLine());
         $this->assertSame($context->obj->file, $e->getOriginalFile());
@@ -66,7 +66,7 @@ class TraceTruncateTest extends \PHPUnit_Framework_TestCase
         $e = $context->e;
         $this->assertInstanceOf('axy\errors\InvalidConfig', $e);
         $this->assertNotInstanceOf('\axy\errors\tests\nstst\errors\Error', $e);
-        $this->assertSame('Config Config is invalid: "no msg"', $e->getMessage());
+        $this->assertSame('Config has an invalid format: "no msg"', $e->getMessage());
         $this->assertSame($context->obj->file, $e->getFile());
         $this->assertSame($context->obj->line, $e->getLine());
         $this->assertSame($context->obj->file, $e->getOriginalFile());

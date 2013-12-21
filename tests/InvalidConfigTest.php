@@ -25,6 +25,6 @@ class InvalidConfigTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('oh, error', $e->getErrmsg());
         $this->assertSame(2, $e->getCode());
         $this->assertSame($previous, $e->getPrevious());
-        $this->assertSame('Config MyConfig is invalid: "oh, error"', $e->getMessage());
+        $this->assertSame('MyConfig has an invalid format: "oh, error"', $e->getMessage());
     }
 }
