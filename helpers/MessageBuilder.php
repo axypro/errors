@@ -36,7 +36,18 @@ trait MessageBuilder
             }
             $callback = function ($m) use ($message) {
                 $key = \trim($m[1]);
-                return isset($message[$key]) ? $message[$key] : '';
+                if (!isset($message[$key])) {
+                    return '';
+                }
+                $value = $message[$key];
+                if (\is_object($value)) {
+                    if (\method_exists($value, '__toString')) {
+                        $value = (string)$value;
+                    } else {
+                        $value = \get_class($value);
+                    }
+                }
+                return $value;
             };
             return \preg_replace_callback('~\{\{(.*?)\}\}~', $callback, $this->defaultMessage);
         }
