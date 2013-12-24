@@ -10,7 +10,7 @@ namespace axy\errors;
  *
  * @author Oleg Grigoreiv <go.vasac@gmail.com>
  */
-class FieldNotExist extends Logic
+class FieldNotExist extends Logic implements NotFound
 {
     /**
      * {@inheritdoc}

@@ -10,7 +10,7 @@ namespace axy\errors;
  *
  * @author Oleg Grigoreiv <go.vasac@gmail.com>
  */
-class ItemNotFound extends Runtime
+class ItemNotFound extends Runtime implements NotFound
 {
     /**
      * {@inheritdoc}
