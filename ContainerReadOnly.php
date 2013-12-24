@@ -20,8 +20,7 @@ class ContainerReadOnly extends Logic implements ReadOnly
     /**
      * Constructor
      *
-     * @param mixed $instance
-     * @param string $key
+     * @param mixed $container
      * @param \Exception $previous
      */
     public function __construct($container = null, \Exception $previous = null)
