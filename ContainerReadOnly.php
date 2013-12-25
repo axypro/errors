@@ -20,16 +20,17 @@ class ContainerReadOnly extends Logic implements ReadOnly
     /**
      * Constructor
      *
-     * @param mixed $container
-     * @param \Exception $previous
+     * @param mixed $container [optional]
+     * @param \Exception $previous [optional]
+     * @param mixed $thrower [optional]
      */
-    public function __construct($container = null, \Exception $previous = null)
+    public function __construct($container = null, \Exception $previous = null, $thrower = null)
     {
         $this->container = $container;
         $message = [
             'container' => $container,
         ];
-        parent::__construct($message, 0, $previous);
+        parent::__construct($message, 0, $previous, $thrower);
     }
 
     /**

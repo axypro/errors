@@ -24,8 +24,9 @@ class InvalidConfig extends Logic
      * @param string $errmsg [optional]
      * @param int $code [optional]
      * @param \Exception $previous [optional]
+     * @param mixed $thrower [optional]
      */
-    public function __construct($config = null, $errmsg = null, $code = 0, \Exception $previous = null)
+    public function __construct($config = null, $errmsg = null, $code = 0, \Exception $previous = null, $thrower = null)
     {
         $this->configName = $config;
         $this->errmsg = $errmsg;
@@ -33,7 +34,7 @@ class InvalidConfig extends Logic
             'config' => $config,
             'errmsg' => $errmsg,
         ];
-        parent::__construct($message, $code, $previous);
+        parent::__construct($message, $code, $previous, $thrower);
     }
 
     /**

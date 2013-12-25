@@ -20,10 +20,11 @@ class RequiresOverride extends Logic implements ReadOnly
     /**
      * Constructor
      *
-     * @param string $method
-     * @param \Exception $previous
+     * @param string $method [optional]
+     * @param \Exception $previous [optional]
+     * @param mixed $thrower [optional]
      */
-    public function __construct($method = true, \Exception $previous = null)
+    public function __construct($method = true, \Exception $previous = null, $thrower = null)
     {
         if ($method === true) {
             $trace = \debug_backtrace();
@@ -42,7 +43,7 @@ class RequiresOverride extends Logic implements ReadOnly
         $message = [
             'method' => $method,
         ];
-        parent::__construct($message, 0, $previous);
+        parent::__construct($message, 0, $previous, $thrower);
     }
 
     /**

@@ -20,11 +20,12 @@ class FieldNotExist extends Logic implements NotFound
     /**
      * Constructor
      *
-     * @param string $key
-     * @param mixed $container
-     * @param \Exception $previous
+     * @param string $key [optional]
+     * @param mixed $container [optional]
+     * @param \Exception $previous [optional]
+     * @param mixed $thrower [optional]
      */
-    public function __construct($key = null, $container = null, \Exception $previous = null)
+    public function __construct($key = null, $container = null, \Exception $previous = null, $thrower = null)
     {
         $this->key = $key;
         $this->container = $container;
@@ -32,7 +33,7 @@ class FieldNotExist extends Logic implements NotFound
             'key' => $key,
             'container' => $container,
         ];
-        parent::__construct($message, 0, $previous);
+        parent::__construct($message, 0, $previous, $thrower);
     }
 
     /**

@@ -20,16 +20,17 @@ class AlreadyInited extends Logic implements ReadOnly
     /**
      * Constructor
      *
-     * @param mixed $object
-     * @param \Exception $previous
+     * @param mixed $object [optional]
+     * @param \Exception $previous [optional]
+     * @param mixed $thrower [optional]
      */
-    public function __construct($object = null, \Exception $previous = null)
+    public function __construct($object = null, \Exception $previous = null, $thrower = null)
     {
         $this->object = $object;
         $message = [
             'object' => $object,
         ];
-        parent::__construct($message, 0, $previous);
+        parent::__construct($message, 0, $previous, $thrower);
     }
 
     /**

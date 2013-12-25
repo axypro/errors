@@ -52,13 +52,43 @@ trait TraceTruncate
 
     /**
      * Truncate the trace by howTruncateTrace options
+     *
+     * @param mixed $thrower
      */
-    private function truncateTrace()
+    private function truncateTrace($thrower)
     {
         $this->truncatedTrace = new ExceptionTrace($this->getTrace(), $this->file, $this->line);
-        $options = $this->howTruncateTrace;
+        $options = $this->createOptionsForTruncateTrace($thrower);
         if (!$options) {
             return;
+        }
+        $this->truncatedTrace->truncate($options);
+        $this->file = $this->truncatedTrace->file;
+        $this->line = $this->truncatedTrace->line;
+    }
+
+    /**
+     * @param mixed $thrower
+     * @return array
+     */
+    private function createOptionsForTruncateTrace($thrower)
+    {
+        if ($thrower) {
+            if (\is_string($thrower)) {
+                return [
+                    'namespace' => $thrower
+                ];
+            }
+            if (\is_object($thrower)) {
+                return [
+                    'namespace' => \preg_replace('/(\\\\[^\\\\]+)$/s', '', \get_class($thrower)),
+                ];
+            }
+            return null;
+        }
+        $options = $this->howTruncateTrace;
+        if (!$options) {
+            return null;
         }
         if ($options === true) {
             $ns = \preg_replace('/(\\\\[^\\\\]+)$/s', '', \get_class($this));
@@ -83,9 +113,7 @@ trait TraceTruncate
                 'namespace' => $options,
             ];
         }
-        $this->truncatedTrace->truncate($options);
-        $this->file = $this->truncatedTrace->file;
-        $this->line = $this->truncatedTrace->line;
+        return $options;
     }
 
     /**

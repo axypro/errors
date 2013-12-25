@@ -15,10 +15,16 @@ trait ErrorTrait
     use MessageBuilder;
     use TraceTruncate;
 
-    public function callErrorTrait($message, $code, $previous)
+    /**
+     * @param mixed $message
+     * @param int $code
+     * @param \Exception $previous
+     * @param mixed $thrower
+     */
+    public function callErrorTrait($message, $code, $previous, $thrower)
     {
         $message = $this->createMessage($message, $code);
         parent::__construct($message, $code, $previous);
-        $this->truncateTrace();
+        $this->truncateTrace($thrower);
     }
 }

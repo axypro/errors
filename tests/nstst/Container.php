@@ -42,6 +42,22 @@ class Container
     }
 
     /**
+     * @param mixed $ns
+     * @throws \axy\errors\tests\nstst\errors\InvalidConfig
+     */
+    public static function thrower($ns)
+    {
+        $t = new thrower\Thrower();
+        self::$file = __FILE__;
+        self::$line = __LINE__ + 1;
+        $t->run($ns);
+    }
+
+    public static $file;
+
+    public static $line;
+
+    /**
      * @var int
      */
     private $num;
