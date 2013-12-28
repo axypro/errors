@@ -17,7 +17,7 @@ class Disabled extends Logic implements Forbidden
      */
     protected $defaultMessage = '{{ service }} is disabled';
 
-    public function __construct($service, \Exception $previous = null, $thrower = null)
+    public function __construct($service = null, \Exception $previous = null, $thrower = null)
     {
         $this->service = $service;
         $message = [
