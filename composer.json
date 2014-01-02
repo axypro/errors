@@ -16,7 +16,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "axy/backtrace": "dev-master"
+        "axy/backtrace": "~0.0.1"
     },
     "autoload": {
         "psr-0": {
