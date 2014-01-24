@@ -5,8 +5,10 @@
  * @package axy\errors
  * @author Oleg Grigoriev <go.vasac@gmail.com>
  * @license https://raw.github.com/axypro/errors/master/LICENSE MIT
+ * @link https://github.com/axypro/errors repository
+ * @link https://github.com/axypro/errors/wiki documentation
+ * @link https://packagist.org/packages/axy/errors on packagist.org
  * @uses PHP5.4+
- * @uses axy\backtrace
  */
 
 namespace axy\errors;

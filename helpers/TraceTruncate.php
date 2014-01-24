@@ -15,18 +15,20 @@ use axy\backtrace\ExceptionTrace;
 trait TraceTruncate
 {
     /**
-     * How truncate trace?
+     * How to truncate a trace?
      *
-     * array - options for Trace::truncate()
+     * array - the list options for the Trace::truncate()
      * string - namespace
-     * true - up one namespace level
-     * false - not truncate
+     * true - go up one level namespace
+     * false - do not truncate
      *
      * @var boolean
      */
     protected $howTruncateTrace = true;
 
     /**
+     * Returns the filename of the original exception point
+     *
      * @return int
      */
     final public function getOriginalFile()
@@ -35,6 +37,8 @@ trait TraceTruncate
     }
 
     /**
+     * Returns the code line of the original exception point
+     *
      * @return int
      */
     final public function getOriginalLine()
@@ -43,6 +47,8 @@ trait TraceTruncate
     }
 
     /**
+     * Returns the truncated trace
+     *
      * @return \axy\backtrace\ExceptionTrace
      */
     final public function getTruncatedTrace()
@@ -51,7 +57,7 @@ trait TraceTruncate
     }
 
     /**
-     * Truncate the trace by howTruncateTrace options
+     * Truncates the trace by howTruncateTrace options
      *
      * @param mixed $thrower
      */
@@ -68,6 +74,8 @@ trait TraceTruncate
     }
 
     /**
+     * Creates an options list for truncate
+     *
      * @param mixed $thrower
      * @return array
      */
@@ -76,7 +84,7 @@ trait TraceTruncate
         if ($thrower) {
             if (\is_string($thrower)) {
                 return [
-                    'namespace' => $thrower
+                    'namespace' => $thrower,
                 ];
             }
             if (\is_object($thrower)) {
@@ -92,12 +100,12 @@ trait TraceTruncate
         }
         if ($options === true) {
             $ns = \preg_replace('/(\\\\[^\\\\]+)$/s', '', \get_class($this));
-            /* True: current NS for errors.
-             * It is subnamespace for a target namespace.
+            /* True: use the current namespace for errors.
+             * It is nested namespace for the target namespace.
              * Truncate it.
              */
             if ($ns === 'axy\errors') {
-                /* Trimming for axy\errors will result "axy". And spread to all axy-libs.
+                /* Trimming for axy\errors will result "axy". And it spreads to all axy-libs.
                  * Therefore, do not trim it.
                  * Return because axy\errors do not throws any exception.
                  * And return requires for TraceTruncateTest::testAxyNS()
@@ -117,6 +125,8 @@ trait TraceTruncate
     }
 
     /**
+     * The truncated trace
+     *
      * @var \axy\backtrace\ExceptionTrace
      */
     private $truncatedTrace;

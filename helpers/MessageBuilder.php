@@ -6,7 +6,7 @@
 namespace axy\errors\helpers;
 
 /**
- * The builder of message for exception
+ * The error message builder
  *
  * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
@@ -23,7 +23,7 @@ trait MessageBuilder
      * Creates the message for the exception instance
      *
      * @param mixed $message
-     *        the original message or variables for a template
+     *        the original message or variables for the template
      * @param int $code
      *        the error code
      * @return string
