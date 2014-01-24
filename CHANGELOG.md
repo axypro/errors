@@ -1,5 +1,7 @@
 ## dev-master
 
+## 0.0.4 (24.01.2014)
+
 * Composer: PSR-4
 * fix: first argument for Disabled is optional.
 * Some refs and docs
