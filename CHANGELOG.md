@@ -1,5 +1,6 @@
-## Master
+## dev-master
 
+* Composer: PSR-4
 * fix: first argument for Disabled is optional.
 
 ## 0.0.3 (28.12.2013)
@@ -15,4 +16,3 @@
 * class NotInited
 
 ## 0.0.1 (22.12.2013)
-
