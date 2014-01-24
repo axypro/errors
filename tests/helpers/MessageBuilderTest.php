@@ -13,7 +13,6 @@ use axy\errors\tests\nstst\CustomError;
 class MessageBuilderTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers ::__construct
      * @covers ::createMessage
      */
     public function testOriginalMessage()
@@ -23,7 +22,6 @@ class MessageBuilderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers ::__construct
      * @covers ::createMessage
      */
     public function testDefaultMessage()
@@ -33,7 +31,6 @@ class MessageBuilderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers ::__construct
      * @covers ::createMessage
      */
     public function testTemplateMessage()
@@ -43,7 +40,6 @@ class MessageBuilderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers ::__construct
      * @covers ::createMessage
      */
     public function testTemplateMessageEmptyVar()
@@ -53,7 +49,6 @@ class MessageBuilderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers ::__construct
      * @covers ::createMessage
      */
     public function testTemplateMessageReplaceCode()

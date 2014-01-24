@@ -14,7 +14,7 @@ class InvalidConfigTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @covers ::__construct
-     * @covers ::getConfig
+     * @covers ::getConfigName
      * @covers ::getErrmsg
      */
     public function testCreate()
