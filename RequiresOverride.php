@@ -8,7 +8,7 @@ namespace axy\errors;
 /**
  * A method requires override
  *
- * @author Oleg Grigoreiv <go.vasac@gmail.com>
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 class RequiresOverride extends Logic implements ReadOnly
 {

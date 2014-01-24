@@ -8,7 +8,7 @@ namespace axy\errors;
 /**
  * This service is disabled in current environment
  *
- * @author Oleg Grigoreiv <go.vasac@gmail.com>
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 class Disabled extends Logic implements Forbidden
 {

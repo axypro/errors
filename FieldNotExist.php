@@ -8,7 +8,7 @@ namespace axy\errors;
 /**
  * A field does not exist in a fixed list of the container
  *
- * @author Oleg Grigoreiv <go.vasac@gmail.com>
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 class FieldNotExist extends Logic implements NotFound
 {

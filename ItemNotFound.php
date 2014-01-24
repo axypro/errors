@@ -8,7 +8,7 @@ namespace axy\errors;
 /**
  * An item was not found in an variable container at the current moment
  *
- * @author Oleg Grigoreiv <go.vasac@gmail.com>
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 class ItemNotFound extends Runtime implements NotFound
 {

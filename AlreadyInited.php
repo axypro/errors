@@ -8,7 +8,7 @@ namespace axy\errors;
 /**
  * Attempt to re-initialize the object
  *
- * @author Oleg Grigoreiv <go.vasac@gmail.com>
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 class AlreadyInited extends Logic implements ReadOnly
 {

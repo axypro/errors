@@ -8,7 +8,7 @@ namespace axy\errors;
 /**
  * This action is pointless in the current context
  *
- * @author Oleg Grigoreiv <go.vasac@gmail.com>
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 class Pointless extends Logic implements Forbidden
 {

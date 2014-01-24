@@ -8,7 +8,7 @@ namespace axy\errors;
 /**
  * Object is not initialized
  *
- * @author Oleg Grigoreiv <go.vasac@gmail.com>
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 class NotInited extends Logic implements ReadOnly
 {

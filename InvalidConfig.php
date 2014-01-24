@@ -8,7 +8,7 @@ namespace axy\errors;
 /**
  * A some configuration has an invalid format
  *
- * @author Oleg Grigoreiv <go.vasac@gmail.com>
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 class InvalidConfig extends Logic
 {

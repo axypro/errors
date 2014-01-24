@@ -8,7 +8,7 @@ namespace axy\errors;
 /**
  * This container is read-only
  *
- * @author Oleg Grigoreiv <go.vasac@gmail.com>
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 class ContainerReadOnly extends Logic implements ReadOnly
 {
