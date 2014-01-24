@@ -24,7 +24,7 @@ class Logic extends \LogicException implements Error
      * @param \Exception $previous [optional]
      *        the previous exception
      * @param mixed $thrower [optional]
-     *        the place from which an exception is thrown (an object or a namespace)
+     *        one who has thrown exception (an object or a namespace)
      */
     public function __construct($message = null, $code = 0, \Exception $previous = null, $thrower = null)
     {

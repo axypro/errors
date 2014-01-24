@@ -6,7 +6,7 @@
 namespace axy\errors;
 
 /**
- * Object is not initialized
+ * An object is not initialized
  *
  * @author Oleg Grigoriev <go.vasac@gmail.com>
  */

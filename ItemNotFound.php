@@ -6,7 +6,7 @@
 namespace axy\errors;
 
 /**
- * An item was not found in an variable container at the current moment
+ * An item was not found in a variable container at the current moment
  *
  * @author Oleg Grigoriev <go.vasac@gmail.com>
  */

@@ -13,21 +13,21 @@ namespace axy\errors;
 interface Error
 {
     /**
-     * Get the original file (before truncate the trace)
+     * Returns the file name of the original exception point
      *
      * @return int
      */
     public function getOriginalFile();
 
     /**
-     * Get the original line (before truncate the trace)
+     * Returns the code line of the original exception point
      *
      * @return int
      */
     public function getOriginalLine();
 
     /**
-     * Get the truncated trace instance
+     * Returns the truncated trace instance
      *
      * @return \axy\backtrace\ExceptionTrace
      */

@@ -6,7 +6,7 @@
 namespace axy\errors;
 
 /**
- * Attempt to re-initialize the object
+ * Attempt to re-initialize an object
  *
  * @author Oleg Grigoriev <go.vasac@gmail.com>
  */

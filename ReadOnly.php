@@ -6,7 +6,7 @@
 namespace axy\errors;
 
 /**
- * Trying to change readonly value
+ * Trying to change a readonly value
  *
  * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
