@@ -1,5 +1,6 @@
 ## dev-master
 
+* InvalidValue (NotValid, TypingError)
 * Composer: removed composer.lock
 
 ## 0.0.4 (24.01.2014)
