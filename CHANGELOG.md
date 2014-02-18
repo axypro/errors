@@ -1,5 +1,7 @@
 ## dev-master
 
+* Composer: removed composer.lock
+
 ## 0.0.4 (24.01.2014)
 
 * Composer: PSR-4
