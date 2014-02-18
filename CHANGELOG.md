@@ -1,5 +1,6 @@
 ## dev-master
 
+* ActionNotAllowed
 * InvalidValue (NotValid, TypingError)
 * Composer: removed composer.lock
 
