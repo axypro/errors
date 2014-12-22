@@ -1,14 +1,13 @@
 <?php
 /**
  * @package axy\errors
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 
 namespace axy\errors;
 
 /**
- * A some configuration has an invalid format
- *
- * @author Oleg Grigoriev <go.vasac@gmail.com>
+ * A configuration has an invalid format
  */
 class InvalidConfig extends Logic
 {
@@ -18,11 +17,14 @@ class InvalidConfig extends Logic
     protected $defaultMessage = '{{ config }} has an invalid format: "{{ errmsg }}"';
 
     /**
-     * Constructor
+     * The constructor
      *
      * @param string $config [optional]
+     *        the config name
      * @param string $errmsg [optional]
+     *        the error message
      * @param int $code [optional]
+     *        the error code
      * @param \Exception $previous [optional]
      * @param mixed $thrower [optional]
      */
@@ -38,7 +40,7 @@ class InvalidConfig extends Logic
     }
 
     /**
-     * @reutrn string
+     * @return string
      */
     final public function getConfigName()
     {

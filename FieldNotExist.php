@@ -1,14 +1,13 @@
 <?php
 /**
  * @package axy\errors
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 
 namespace axy\errors;
 
 /**
  * A field does not exist in a fixed list of the container
- *
- * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 class FieldNotExist extends Logic implements NotFound
 {
@@ -18,10 +17,10 @@ class FieldNotExist extends Logic implements NotFound
     protected $defaultMessage = 'Field "{{ key }}" is not exist in "{{ container }}"';
 
     /**
-     * Constructor
+     * The constructor
      *
      * @param string $key [optional]
-     * @param mixed $container [optional]
+     * @param object|string $container [optional]
      * @param \Exception $previous [optional]
      * @param mixed $thrower [optional]
      */
@@ -45,7 +44,7 @@ class FieldNotExist extends Logic implements NotFound
     }
 
     /**
-     * @return mixed
+     * @return object|string
      */
     final public function getContainer()
     {
@@ -58,7 +57,7 @@ class FieldNotExist extends Logic implements NotFound
     protected $key;
 
     /**
-     * @var mixed
+     * @var object|string
      */
     protected $container;
 }

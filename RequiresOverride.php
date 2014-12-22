@@ -1,14 +1,13 @@
 <?php
 /**
  * @package axy\errors
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 
 namespace axy\errors;
 
 /**
  * A method requires override
- *
- * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 class RequiresOverride extends Logic implements ReadOnly
 {
@@ -20,7 +19,8 @@ class RequiresOverride extends Logic implements ReadOnly
     /**
      * Constructor
      *
-     * @param string $method [optional]
+     * @param string|boolean $method [optional]
+     *        the method name (if TRUE - method where the exception was thrown)
      * @param \Exception $previous [optional]
      * @param mixed $thrower [optional]
      */

@@ -1,14 +1,13 @@
 <?php
 /**
  * @package axy\errors
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 
 namespace axy\errors;
 
 /**
  * An object is not initialized
- *
- * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 class NotInited extends Logic implements ReadOnly
 {
@@ -18,9 +17,9 @@ class NotInited extends Logic implements ReadOnly
     protected $defaultMessage = '{{ object }} is not initialized';
 
     /**
-     * Constructor
+     * The constructor
      *
-     * @param mixed $object [optional]
+     * @param object|string $object [optional]
      * @param \Exception $previous [optional]
      * @param mixed $thrower [optional]
      */
@@ -34,7 +33,7 @@ class NotInited extends Logic implements ReadOnly
     }
 
     /**
-     * @return mixed
+     * @return object|string
      */
     final public function getObject()
     {
@@ -42,7 +41,7 @@ class NotInited extends Logic implements ReadOnly
     }
 
     /**
-     * @var mixed
+     * @var object|string
      */
     protected $object;
 }

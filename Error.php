@@ -1,26 +1,25 @@
 <?php
 /**
  * @package axy\errors
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 
 namespace axy\errors;
 
 /**
  * The basic error in the axy hierarchy
- *
- * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 interface Error
 {
     /**
-     * Returns the file name of the original exception point
+     * Returns the filename of the original exception point
      *
-     * @return int
+     * @return string
      */
     public function getOriginalFile();
 
     /**
-     * Returns the code line of the original exception point
+     * Returns the line number of the original exception point
      *
      * @return int
      */

@@ -1,14 +1,13 @@
 <?php
 /**
  * @package axy\errors
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 
 namespace axy\errors;
 
 /**
  * This property is read-only
- *
- * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 class PropertyReadOnly extends Logic implements ReadOnly
 {
@@ -18,9 +17,9 @@ class PropertyReadOnly extends Logic implements ReadOnly
     protected $defaultMessage = 'Property {{ container }}::${{ key }} is read-only';
 
     /**
-     * Constructor
+     * The constructor
      *
-     * @param mixed $container [optional]
+     * @param object|string $container [optional]
      * @param string $key [optional]
      * @param \Exception $previous [optional]
      * @param mixed $thrower [optional]
@@ -37,7 +36,7 @@ class PropertyReadOnly extends Logic implements ReadOnly
     }
 
     /**
-     * @return mixed
+     * @return object|string
      */
     final public function getContainer()
     {
@@ -53,7 +52,7 @@ class PropertyReadOnly extends Logic implements ReadOnly
     }
 
     /**
-     * @var mixed
+     * @var object|string
      */
     protected $container;
 

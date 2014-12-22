@@ -20,7 +20,8 @@ class ContainerReadOnly extends Logic implements ReadOnly
     /**
      * Constructor
      *
-     * @param mixed $container [optional]
+     * @param object|string $container [optional]
+     *        the container or its name
      * @param \Exception $previous [optional]
      * @param mixed $thrower [optional]
      */
@@ -34,7 +35,7 @@ class ContainerReadOnly extends Logic implements ReadOnly
     }
 
     /**
-     * @return mixed
+     * @return object|string
      */
     final public function getContainer()
     {

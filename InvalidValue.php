@@ -1,14 +1,13 @@
 <?php
 /**
  * @package axy\errors
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 
 namespace axy\errors;
 
 /**
  * A value has an invalid format
- *
- * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 interface InvalidValue extends Error
 {

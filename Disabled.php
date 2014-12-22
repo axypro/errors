@@ -1,14 +1,13 @@
 <?php
 /**
  * @package axy\errors
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 
 namespace axy\errors;
 
 /**
  * This service is disabled in the current environment
- *
- * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 class Disabled extends Logic implements Forbidden
 {
@@ -18,9 +17,10 @@ class Disabled extends Logic implements Forbidden
     protected $defaultMessage = '{{ service }} is disabled';
 
     /**
-     * Constructor
+     * The constructor
      *
-     * @param mixed $service [optional]
+     * @param object|string $service [optional]
+     *        the service or its name
      * @param \Exception $previous
      * @param object $thrower [optional]
      */
@@ -36,7 +36,7 @@ class Disabled extends Logic implements Forbidden
     /**
      * Get the disabled service
      *
-     * @return mixed
+     * @return object|string
      */
     public function getService()
     {
@@ -44,7 +44,7 @@ class Disabled extends Logic implements Forbidden
     }
 
     /**
-     * @var mixed
+     * @var object|string
      */
     private $service;
 }

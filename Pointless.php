@@ -1,14 +1,13 @@
 <?php
 /**
  * @package axy\errors
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 
 namespace axy\errors;
 
 /**
  * This action is pointless in the current context
- *
- * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 class Pointless extends Logic implements Forbidden
 {

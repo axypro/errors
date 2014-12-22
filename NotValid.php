@@ -1,14 +1,13 @@
 <?php
 /**
  * @package axy\errors
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 
 namespace axy\errors;
 
 /**
  * A value is not valid for this action
- *
- * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 class NotValid extends Logic implements InvalidValue
 {
@@ -18,10 +17,12 @@ class NotValid extends Logic implements InvalidValue
     protected $defaultMessage = 'Value of {{ varname }} is not valid: {{ errmsg }}';
 
     /**
-     * Constructor
+     * The constructor
      *
      * @param string $varname [optional]
+     *        name of a variable who contains the value
      * @param string $errmsg [optional]
+     *        the error message
      * @param \Exception $previous [optional]
      * @param mixed $thrower [optional]
      */

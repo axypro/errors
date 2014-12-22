@@ -1,14 +1,13 @@
 <?php
 /**
  * @package axy\errors
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 
 namespace axy\errors;
 
 /**
  * An item was not found in a variable container at the current moment
- *
- * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 class ItemNotFound extends Runtime implements NotFound
 {
@@ -18,10 +17,10 @@ class ItemNotFound extends Runtime implements NotFound
     protected $defaultMessage = 'Item "{{ key }}" is not found in "{{ container }}"';
 
     /**
-     * Constructor
+     * The constructor
      *
      * @param string $key [optional]
-     * @param mixed $container [optional]
+     * @param object|string $container [optional]
      * @param \Exception $previous [optional]
      * @param mixed $thrower [optional]
      */
@@ -45,7 +44,7 @@ class ItemNotFound extends Runtime implements NotFound
     }
 
     /**
-     * @return mixed
+     * @return object|string
      */
     final public function getContainer()
     {
@@ -58,7 +57,7 @@ class ItemNotFound extends Runtime implements NotFound
     protected $key;
 
     /**
-     * @var mixed
+     * @var object|string
      */
     protected $container;
 }

@@ -1,14 +1,13 @@
 <?php
 /**
  * @package axy\errors
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 
 namespace axy\errors;
 
 /**
  * This action is not allowed for this object
- *
- * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 class ActionNotAllowed extends Logic
 {
@@ -18,15 +17,18 @@ class ActionNotAllowed extends Logic
     protected $defaultMessage = 'Action "{{ action }}" is not allowed for {{ object }} ({{ reason}})';
 
     /**
-     * Constructor
+     * The constructor
      *
      * @param string $action
-     * @param mixed $object
-     * @param string $reason
+     *        the action name
+     * @param object|string $object
+     *        the object (or the object name)
+     * @param string $reason [optional]
+     *        a reason
      * @param \Exception $previous
      * @param mixed $thrower
      */
-    public function __construct($action, $object, $reason, \Exception $previous = null, $thrower = null)
+    public function __construct($action, $object, $reason = null, \Exception $previous = null, $thrower = null)
     {
         $this->action = $action;
         $this->object = $object;
@@ -48,7 +50,7 @@ class ActionNotAllowed extends Logic
     }
 
     /**
-     * @return mixed
+     * @return object|string
      */
     final public function getObject()
     {
@@ -69,7 +71,7 @@ class ActionNotAllowed extends Logic
     protected $action;
 
     /**
-     * @var mixed
+     * @var object|string
      */
     protected $object;
 

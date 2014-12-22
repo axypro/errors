@@ -1,14 +1,13 @@
 <?php
 /**
  * @package axy\errors
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 
 namespace axy\errors;
 
 /**
  * The error of a value type
- *
- * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 class TypingError extends Logic implements InvalidValue
 {
@@ -18,7 +17,7 @@ class TypingError extends Logic implements InvalidValue
     protected $defaultMessage = '{{ varname }} must be {{ expected }}';
 
     /**
-     * Constructor
+     * The constructor
      *
      * @param string $varname [optional]
      * @param string|array $expected [optional]

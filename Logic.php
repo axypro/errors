@@ -1,21 +1,20 @@
 <?php
 /**
  * @package axy\errors
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 
 namespace axy\errors;
 
 /**
  * The basic logic-error in the axy hierarchy
- *
- * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 class Logic extends \LogicException implements Error
 {
     use helpers\ErrorTrait;
 
     /**
-     * Constructor
+     * The constructor
      *
      * @param mixed $message [optional]
      *        the error message or variables for the message template
