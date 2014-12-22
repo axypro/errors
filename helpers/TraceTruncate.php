@@ -82,14 +82,14 @@ trait TraceTruncate
     private function createOptionsForTruncateTrace($thrower)
     {
         if ($thrower) {
-            if (\is_string($thrower)) {
+            if (is_string($thrower)) {
                 return [
                     'namespace' => $thrower,
                 ];
             }
-            if (\is_object($thrower)) {
+            if (is_object($thrower)) {
                 return [
-                    'namespace' => \preg_replace('/(\\\\[^\\\\]+)$/s', '', \get_class($thrower)),
+                    'namespace' => preg_replace('/(\\\\[^\\\\]+)$/s', '', get_class($thrower)),
                 ];
             }
             return null;
@@ -99,7 +99,7 @@ trait TraceTruncate
             return null;
         }
         if ($options === true) {
-            $ns = \preg_replace('/(\\\\[^\\\\]+)$/s', '', \get_class($this));
+            $ns = preg_replace('/(\\\\[^\\\\]+)$/s', '', get_class($this));
             /* True: use the current namespace for errors.
              * It is nested namespace for the target namespace.
              * Truncate it.
@@ -112,11 +112,11 @@ trait TraceTruncate
                  */
                 return;
             }
-            $ns = \preg_replace('/(\\\\[^\\\\]+)$/s', '', $ns);
+            $ns = preg_replace('/(\\\\[^\\\\]+)$/s', '', $ns);
             $options = [
                 'namespace' => $ns,
             ];
-        } elseif (!\is_array($options)) {
+        } elseif (!is_array($options)) {
             $options = [
                 'namespace' => $options,
             ];

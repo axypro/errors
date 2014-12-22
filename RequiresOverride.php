@@ -27,7 +27,7 @@ class RequiresOverride extends Logic implements ReadOnly
     public function __construct($method = true, \Exception $previous = null, $thrower = null)
     {
         if ($method === true) {
-            $trace = \debug_backtrace();
+            $trace = debug_backtrace();
             $method = '';
             if (isset($trace[1])) {
                 $trace = $trace[1];

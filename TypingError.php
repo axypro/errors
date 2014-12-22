@@ -27,12 +27,12 @@ class TypingError extends Logic implements InvalidValue
     public function __construct($varname = null, $expected = null, \Exception $previous = null, $thrower = null)
     {
         $this->varname = $varname;
-        if (\is_array($expected)) {
+        if (is_array($expected)) {
             $this->expected = $expected;
-            if (\count($expected) > 0) {
-                $last = \array_pop($expected);
+            if (count($expected) > 0) {
+                $last = array_pop($expected);
                 if (!empty($expected)) {
-                    $expected = \implode(', ', $expected).' or '.$last;
+                    $expected = implode(', ', $expected).' or '.$last;
                 } else {
                     $expected = $last;
                 }

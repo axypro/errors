@@ -30,26 +30,26 @@ trait MessageBuilder
      */
     private function createMessage($message, $code)
     {
-        if (\is_array($message)) {
-            if (!\array_key_exists('code', $message)) {
+        if (is_array($message)) {
+            if (!array_key_exists('code', $message)) {
                 $message['code'] = $code;
             }
             $callback = function ($m) use ($message) {
-                $key = \trim($m[1]);
+                $key = trim($m[1]);
                 if (!isset($message[$key])) {
                     return '';
                 }
                 $value = $message[$key];
-                if (\is_object($value)) {
-                    if (\method_exists($value, '__toString')) {
+                if (is_object($value)) {
+                    if (method_exists($value, '__toString')) {
                         $value = (string)$value;
                     } else {
-                        $value = \get_class($value);
+                        $value = get_class($value);
                     }
                 }
                 return $value;
             };
-            return \preg_replace_callback('~\{\{(.*?)\}\}~', $callback, $this->defaultMessage);
+            return preg_replace_callback('~\{\{(.*?)\}\}~', $callback, $this->defaultMessage);
         }
         return ($message !== null) ? $message : $this->defaultMessage;
     }
