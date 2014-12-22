@@ -9,14 +9,14 @@ use axy\errors\FieldNotExist;
 use axy\errors\tests\nstst\Container;
 
 /**
- * @coversDefaultClass axy\errors\FieldNotExist
+ * coversDefaultClass axy\errors\FieldNotExist
  */
 class FieldNotExistTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers ::__construct
-     * @covers ::getKey
-     * @covers ::getContainer
+     * covers ::__construct
+     * covers ::getKey
+     * covers ::getContainer
      */
     public function testCreate()
     {
@@ -32,7 +32,7 @@ class FieldNotExistTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers ::__construct
+     * covers ::__construct
      */
     public function testPrevious()
     {

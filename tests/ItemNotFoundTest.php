@@ -9,14 +9,14 @@ use axy\errors\ItemNotFound;
 use axy\errors\tests\nstst\Container;
 
 /**
- * @coversDefaultClass axy\errors\ItemNotFound
+ * coversDefaultClass axy\errors\ItemNotFound
  */
 class ItemNotFoundTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers ::__construct
-     * @covers ::getKey
-     * @covers ::getContainer
+     * covers ::__construct
+     * covers ::getKey
+     * covers ::getContainer
      */
     public function testCreate()
     {
@@ -32,7 +32,7 @@ class ItemNotFoundTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers ::__construct
+     * covers ::__construct
      */
     public function testPrevious()
     {

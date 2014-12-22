@@ -8,12 +8,12 @@ namespace axy\errors\tests;
 use axy\errors\Pointless;
 
 /**
- * @coversDefaultClass axy\errors\Pointless
+ * coversDefaultClass axy\errors\Pointless
  */
 class PointlessTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers ::__construct
+     * covers ::__construct
      */
     public function testCreate()
     {

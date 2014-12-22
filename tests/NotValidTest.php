@@ -8,14 +8,14 @@ namespace axy\errors\tests;
 use axy\errors\NotValid;
 
 /**
- * @coversDefaultClass axy\errors\NotValid
+ * coversDefaultClass axy\errors\NotValid
  */
 class NotValidTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers ::__construct
-     * @covers ::getVarname
-     * @covers ::getErrmsg
+     * covers ::__construct
+     * covers ::getVarname
+     * covers ::getErrmsg
      */
     public function testCreate()
     {

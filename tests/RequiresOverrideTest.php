@@ -8,13 +8,13 @@ namespace axy\errors\tests;
 use axy\errors\RequiresOverride;
 
 /**
- * @coversDefaultClass axy\errors\RequiresOverride
+ * coversDefaultClass axy\errors\RequiresOverride
  */
 class RequiresOverrideTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers ::__construct
-     * @covers ::getMethod
+     * covers ::__construct
+     * covers ::getMethod
      */
     public function testCreate()
     {
@@ -26,8 +26,8 @@ class RequiresOverrideTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers ::__construct
-     * @covers ::getMethod
+     * covers ::__construct
+     * covers ::getMethod
      */
     public function testCreateBacktrace()
     {

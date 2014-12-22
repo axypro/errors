@@ -8,13 +8,13 @@ namespace axy\errors\tests;
 use axy\errors\ContainerReadOnly;
 
 /**
- * @coversDefaultClass axy\errors\ContainerReadOnly
+ * coversDefaultClass axy\errors\ContainerReadOnly
  */
 class ContainerReadOnlyTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers ::__construct
-     * @covers ::getContainer
+     * covers ::__construct
+     * covers ::getContainer
      */
     public function testCreate()
     {

@@ -8,12 +8,12 @@ namespace axy\errors\tests;
 use axy\errors\Disabled;
 
 /**
- * @coversDefaultClass axy\errors\Disabled
+ * coversDefaultClass axy\errors\Disabled
  */
 class DisabledTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers ::__construct
+     * covers ::__construct
      */
     public function testCreate()
     {

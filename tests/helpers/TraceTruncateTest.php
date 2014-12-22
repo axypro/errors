@@ -9,7 +9,7 @@ use axy\errors\tests\nstst\Invalid;
 use axy\errors\tests\nstst\Container;
 
 /**
- * @coversDefaultClass axy\errors\helpers\TraceTruncate
+ * coversDefaultClass axy\errors\helpers\TraceTruncate
  */
 class TraceTruncateTest extends \PHPUnit_Framework_TestCase
 {

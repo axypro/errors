@@ -8,13 +8,13 @@ namespace axy\errors\tests;
 use axy\errors\NotInited;
 
 /**
- * @coversDefaultClass axy\errors\NotInited
+ * coversDefaultClass axy\errors\NotInited
  */
 class NotInitedTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers ::__construct
-     * @covers ::getObject
+     * covers ::__construct
+     * covers ::getObject
      */
     public function testCreate()
     {

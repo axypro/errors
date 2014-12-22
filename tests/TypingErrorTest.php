@@ -8,14 +8,14 @@ namespace axy\errors\tests;
 use axy\errors\TypingError;
 
 /**
- * @coversDefaultClass axy\errors\TypingError
+ * coversDefaultClass axy\errors\TypingError
  */
 class TypingErrorTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers ::__construct
-     * @covers ::getVarname
-     * @covers ::getExpected
+     * covers ::__construct
+     * covers ::getVarname
+     * covers ::getExpected
      */
     public function testNormal()
     {
@@ -28,9 +28,9 @@ class TypingErrorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers ::__construct
-     * @covers ::getVarname
-     * @covers ::getExpected
+     * covers ::__construct
+     * covers ::getVarname
+     * covers ::getExpected
      */
     public function testExpectedArray()
     {
@@ -41,9 +41,9 @@ class TypingErrorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers ::__construct
-     * @covers ::getVarname
-     * @covers ::getExpected
+     * covers ::__construct
+     * covers ::getVarname
+     * covers ::getExpected
      */
     public function testDefault()
     {

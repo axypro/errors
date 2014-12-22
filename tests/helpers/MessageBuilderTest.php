@@ -8,12 +8,12 @@ namespace axy\errors\tests\helpers;
 use axy\errors\tests\nstst\CustomError;
 
 /**
- * @coversDefaultClass axy\errors\helpers\MessageBuilder
+ * coversDefaultClass axy\errors\helpers\MessageBuilder
  */
 class MessageBuilderTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers ::createMessage
+     * covers ::createMessage
      */
     public function testOriginalMessage()
     {
@@ -22,7 +22,7 @@ class MessageBuilderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers ::createMessage
+     * covers ::createMessage
      */
     public function testDefaultMessage()
     {
@@ -31,7 +31,7 @@ class MessageBuilderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers ::createMessage
+     * covers ::createMessage
      */
     public function testTemplateMessage()
     {
@@ -40,7 +40,7 @@ class MessageBuilderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers ::createMessage
+     * covers ::createMessage
      */
     public function testTemplateMessageEmptyVar()
     {
@@ -49,7 +49,7 @@ class MessageBuilderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers ::createMessage
+     * covers ::createMessage
      */
     public function testTemplateMessageReplaceCode()
     {
@@ -58,7 +58,7 @@ class MessageBuilderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers ::createMessage
+     * covers ::createMessage
      */
     public function testObjectToString()
     {

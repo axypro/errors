@@ -8,15 +8,15 @@ namespace axy\errors\tests;
 use axy\errors\ActionNotAllowed;
 
 /**
- * @coversDefaultClass axy\errors\ActionNotAllowed
+ * coversDefaultClass axy\errors\ActionNotAllowed
  */
 class ActionNotAllowedTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers ::__construct
-     * @covers ::getAction
-     * @covers ::getObject
-     * @covers ::getReason
+     * covers ::__construct
+     * covers ::getAction
+     * covers ::getObject
+     * covers ::getReason
      */
     public function testCreate()
     {

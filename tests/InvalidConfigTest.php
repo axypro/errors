@@ -8,14 +8,14 @@ namespace axy\errors\tests;
 use axy\errors\InvalidConfig;
 
 /**
- * @coversDefaultClass axy\errors\InvalidConfig
+ * coversDefaultClass axy\errors\InvalidConfig
  */
 class InvalidConfigTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers ::__construct
-     * @covers ::getConfigName
-     * @covers ::getErrmsg
+     * covers ::__construct
+     * covers ::getConfigName
+     * covers ::getErrmsg
      */
     public function testCreate()
     {

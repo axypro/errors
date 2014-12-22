@@ -8,13 +8,13 @@ namespace axy\errors\tests;
 use axy\errors\AlreadyInited;
 
 /**
- * @coversDefaultClass axy\errors\AlreadyInited
+ * coversDefaultClass axy\errors\AlreadyInited
  */
 class AlreadyInitedTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers ::__construct
-     * @covers ::getObject
+     * covers ::__construct
+     * covers ::getObject
      */
     public function testCreate()
     {

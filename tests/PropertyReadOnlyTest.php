@@ -8,14 +8,14 @@ namespace axy\errors\tests;
 use axy\errors\PropertyReadOnly;
 
 /**
- * @coversDefaultClass axy\errors\PropertyReadOnly
+ * coversDefaultClass axy\errors\PropertyReadOnly
  */
 class PropertyReadOnlyTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers ::__construct
-     * @covers ::getContainer
-     * @covers ::getKey
+     * covers ::__construct
+     * covers ::getContainer
+     * covers ::getKey
      */
     public function testCreate()
     {
