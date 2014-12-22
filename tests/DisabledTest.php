@@ -26,5 +26,6 @@ class DisabledTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('axy\errors\Forbidden', $e);
         $this->assertSame($previous, $e->getPrevious());
         $this->assertSame('Srv is disabled', $e->getMessage());
+        $this->assertSame('Srv', $e->getService());
     }
 }

@@ -45,6 +45,33 @@ class TypingErrorTest extends \PHPUnit_Framework_TestCase
      * covers ::getVarname
      * covers ::getExpected
      */
+    public function testExpectedArraySingle()
+    {
+        $e = new TypingError('arg', ['MyClass']);
+        $this->assertSame('arg', $e->getVarname());
+        $this->assertSame(['MyClass'], $e->getExpected());
+        $this->assertSame('arg must be MyClass', $e->getMessage());
+    }
+
+    /**
+     * covers ::__construct
+     * covers ::getVarname
+     * covers ::getExpected
+     */
+    public function testExpectedArrayEmpty()
+    {
+        $e = new TypingError('arg', []);
+        $this->assertSame('arg', $e->getVarname());
+        $this->assertSame([], $e->getExpected());
+        $this->assertSame('arg must be a different type', $e->getMessage());
+    }
+
+
+    /**
+     * covers ::__construct
+     * covers ::getVarname
+     * covers ::getExpected
+     */
     public function testDefault()
     {
         $e = new TypingError();
