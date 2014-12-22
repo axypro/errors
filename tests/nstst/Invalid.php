@@ -5,6 +5,9 @@
 
 namespace axy\errors\tests\nstst;
 
+use axy\errors\InvalidConfig;
+use axy\errors\tests\nstst\errors\Pointless;
+
 class Invalid
 {
     /**
@@ -27,27 +30,27 @@ class Invalid
 
     /**
      * @param int $x
-     * @throws \axy\errors\InvalidConfig
+     * @throws InvalidConfig
      */
     public function begin($x)
     {
-        return $this->cont($x, 2);
+        $this->cont($x, 2);
     }
 
     /**
-     * @throws \axy\errors\tests\nstst\errors\Pointless
+     * @throws Pointless
      */
     public function pointless()
     {
         $this->file = __FILE__;
         $this->line = __LINE__ + 1;
-        throw new \axy\errors\tests\nstst\errors\Pointless();
+        throw new Pointless();
     }
 
     /**
      * @param int $x
      * @param int $y
-     * @throws \axy\errors\InvalidConfig
+     * @throws InvalidConfig
      */
     private function cont($x, $y)
     {
@@ -55,10 +58,9 @@ class Invalid
     }
 
     /**
-     * @param int $z
-     * @throws \axy\errors\InvalidConfig
+     * @throws InvalidConfig
      */
-    private function finish($z)
+    private function finish()
     {
         $this->file = __FILE__;
         if ($this->inherit) {
@@ -66,7 +68,7 @@ class Invalid
             throw new errors\InvalidConfig('Config', 'errmsg');
         } else {
             $this->line = __LINE__ + 1;
-            throw new \axy\errors\InvalidConfig('Config', 'no msg');
+            throw new InvalidConfig('Config', 'no msg');
         }
     }
 

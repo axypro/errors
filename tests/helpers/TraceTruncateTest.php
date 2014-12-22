@@ -5,6 +5,9 @@
 
 namespace axy\errors\tests\helpers;
 
+use axy\errors\InvalidConfig;
+use axy\errors\tests\nstst\errors\InvalidConfig as CustomInvalidConfig;
+use axy\errors\tests\nstst\errors\Pointless;
 use axy\errors\tests\nstst\Invalid;
 use axy\errors\tests\nstst\Container;
 
@@ -17,6 +20,7 @@ class TraceTruncateTest extends \PHPUnit_Framework_TestCase
      * test*() methods invoked via Reflection (has not key "file")
      *
      * @param boolean $inherit
+     * @return object
      */
     private function getErrorContext($inherit)
     {
@@ -25,7 +29,7 @@ class TraceTruncateTest extends \PHPUnit_Framework_TestCase
             $line = __LINE__ + 1;
             $obj->begin(1);
             $this->fail('not thrown');
-        } catch (\axy\errors\InvalidConfig $e) {
+        } catch (InvalidConfig $e) {
         }
         return (object)[
             'obj' => $obj,
@@ -87,8 +91,8 @@ class TraceTruncateTest extends \PHPUnit_Framework_TestCase
     {
         try {
             $line = __LINE__ + 1;
-            throw new \axy\errors\tests\nstst\errors\InvalidConfig();
-        } catch (\axy\errors\tests\nstst\errors\InvalidConfig $e) {
+            throw new CustomInvalidConfig();
+        } catch (CustomInvalidConfig $e) {
         }
         $this->assertSame(__FILE__, $e->getFile());
         $this->assertSame($line, $e->getLine());
@@ -110,7 +114,7 @@ class TraceTruncateTest extends \PHPUnit_Framework_TestCase
         try {
             $obj->pointless();
             $this->fail('not thrown');
-        } catch (\axy\errors\tests\nstst\errors\Pointless $e) {
+        } catch (Pointless $e) {
         }
         $this->assertSame($obj->file, $e->getFile());
         $this->assertSame($obj->line, $e->getLine());
@@ -122,7 +126,7 @@ class TraceTruncateTest extends \PHPUnit_Framework_TestCase
             $line = __LINE__ + 1;
             Container::thrower(null);
             $this->fail('not thrown');
-        } catch (\axy\errors\tests\nstst\errors\InvalidConfig $e) {
+        } catch (CustomInvalidConfig $e) {
         }
         $this->assertSame(__FILE__, $e->getFile());
         $this->assertSame($line, $e->getLine());
@@ -133,7 +137,7 @@ class TraceTruncateTest extends \PHPUnit_Framework_TestCase
         try {
             Container::thrower(true);
             $this->fail('not thrown');
-        } catch (\axy\errors\tests\nstst\errors\InvalidConfig $e) {
+        } catch (CustomInvalidConfig $e) {
         }
         $this->assertSame(Container::$file, $e->getFile());
         $this->assertSame(Container::$line, $e->getLine());
@@ -145,7 +149,7 @@ class TraceTruncateTest extends \PHPUnit_Framework_TestCase
             $line = __LINE__ + 1;
             Container::thrower('axy\errors\tests\nstst');
             $this->fail('not thrown');
-        } catch (\axy\errors\tests\nstst\errors\InvalidConfig $e) {
+        } catch (CustomInvalidConfig $e) {
         }
         $this->assertSame(__FILE__, $e->getFile());
         $this->assertSame($line, $e->getLine());

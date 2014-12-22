@@ -5,7 +5,10 @@
 
 namespace axy\errors\tests\helpers;
 
+use axy\errors\FieldNotExist;
+use axy\errors\tests\nstst\Container;
 use axy\errors\tests\nstst\CustomError;
+use axy\errors\tests\nstst\Invalid;
 
 /**
  * coversDefaultClass axy\errors\helpers\MessageBuilder
@@ -63,15 +66,15 @@ class MessageBuilderTest extends \PHPUnit_Framework_TestCase
     public function testObjectToString()
     {
         try {
-            $container = new \axy\errors\tests\nstst\Container(3);
-            throw new \axy\errors\FieldNotExist('f', $container);
-        } catch (\axy\errors\FieldNotExist $e) {
+            $container = new Container(3);
+            throw new FieldNotExist('f', $container);
+        } catch (FieldNotExist $e) {
             $this->assertSame('Field "f" is not exist in "Container#3"', $e->getMessage());
         }
         try {
-            $inv = new \axy\errors\tests\nstst\Invalid(false);
-            throw new \axy\errors\FieldNotExist('f', $inv);
-        } catch (\axy\errors\FieldNotExist $e) {
+            $inv = new Invalid(false);
+            throw new FieldNotExist('f', $inv);
+        } catch (FieldNotExist $e) {
             $this->assertSame('Field "f" is not exist in "axy\errors\tests\nstst\Invalid"', $e->getMessage());
         }
     }

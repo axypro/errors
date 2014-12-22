@@ -5,6 +5,8 @@
 
 namespace axy\errors\tests\nstst\thrower;
 
+use \axy\errors\tests\nstst\errors\InvalidConfig;
+
 class Thrower
 {
     public function run($ns)
@@ -17,6 +19,6 @@ class Thrower
         if ($ns === true) {
             $ns = $this;
         }
-        throw new \axy\errors\tests\nstst\errors\InvalidConfig(null, null, 0, null, $ns);
+        throw new InvalidConfig(null, null, 0, null, $ns);
     }
 }

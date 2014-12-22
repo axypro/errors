@@ -33,7 +33,7 @@ class RequiresOverrideTest extends \PHPUnit_Framework_TestCase
     {
         try {
             $this->methodToOverride();
-        } catch (\axy\errors\RequiresOverride $e) {
+        } catch (RequiresOverride $e) {
         }
         $this->assertSame('axy\errors\tests\RequiresOverrideTest::methodToOverride', $e->getMethod());
         $expected = 'Method axy\errors\tests\RequiresOverrideTest::methodToOverride requires override';

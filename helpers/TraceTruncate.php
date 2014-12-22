@@ -110,7 +110,7 @@ trait TraceTruncate
                  * Return because axy\errors do not throws any exception.
                  * And return requires for TraceTruncateTest::testAxyNS()
                  */
-                return;
+                return null;
             }
             $ns = preg_replace('/(\\\\[^\\\\]+)$/s', '', $ns);
             $options = [

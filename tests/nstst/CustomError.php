@@ -5,7 +5,9 @@
 
 namespace axy\errors\tests\nstst;
 
-class CustomError extends \axy\errors\Logic
+use axy\errors\Logic;
+
+class CustomError extends Logic
 {
     /**
      * {@inheritdoc}

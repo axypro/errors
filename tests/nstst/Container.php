@@ -5,6 +5,9 @@
 
 namespace axy\errors\tests\nstst;
 
+use axy\errors\FieldNotExist;
+use axy\errors\ItemNotFound;
+
 class Container
 {
     /**
@@ -16,21 +19,21 @@ class Container
     }
 
     /**
-     * @param strin $key
-     * @throws \axy\errors\ItemNotFound
+     * @param string $key
+     * @throws ItemNotFound
      */
     public function getUndefinedItem($key)
     {
-        throw new \axy\errors\ItemNotFound($key, $this);
+        throw new ItemNotFound($key, $this);
     }
 
     /**
-     * @param strin $key
-     * @throws \axy\errors\FieldNotExist
+     * @param string $key
+     * @throws FieldNotExist
      */
     public function getUnknownField($key)
     {
-        throw new \axy\errors\FieldNotExist($key, $this);
+        throw new FieldNotExist($key, $this);
     }
 
     /**
