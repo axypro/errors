@@ -7,7 +7,7 @@ namespace axy\errors\tests\nstst;
 
 use axy\errors\ItemNotFound;
 
-class OptHowTruncate
+class OptsHelper
 {
     /**
      * @return string
@@ -21,6 +21,11 @@ class OptHowTruncate
      * @throws \axy\errors\ItemNotFound
      */
     public static function error()
+    {
+        self::throwError();
+    }
+
+    private static function throwError()
     {
         throw new ItemNotFound;
     }

@@ -7,7 +7,7 @@ namespace axy\errors\tests;
 
 use axy\errors\Opts;
 use axy\errors\ItemNotFound;
-use axy\errors\tests\nstst\OptHowTruncate;
+use axy\errors\tests\nstst\OptsHelper;
 
 /**
  * coversDefaultClass axy\errors\Opts
@@ -16,27 +16,32 @@ class OptsTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $this->opts = (object)[
-            'howTruncateStack' => Opts::getHowTruncateTrace(),
-        ];
+        if (!$this->opts) {
+            $this->opts = (object)[
+                'howTruncateTrace' => Opts::getHowTruncateTrace(),
+                'truncateTrace' => Opts::getTruncateNativeTrace(),
+            ];
+        }
     }
 
     public function tearDown()
     {
-        Opts::setHowTruncateTrace($this->opts->howTruncateStack);
+        Opts::setHowTruncateTrace($this->opts->howTruncateTrace);
+        Opts::setTruncateNativeTrace($this->opts->truncateTrace);
     }
 
     /**
-     * @covers howTruncateTrace
+     * covers setHowTruncateTrace
+     * covers getHowTruncateTrace
      */
     public function testHowTruncateTrace()
     {
         Opts::setHowTruncateTrace(false);
         $this->assertSame(false, Opts::getHowTruncateTrace());
-        $fn = OptHowTruncate::getFile();
+        $fn = OptsHelper::getFile();
         $e = null;
         try {
-            OptHowTruncate::error();
+            OptsHelper::error();
         } catch (ItemNotFound $e) {
         }
         $this->assertSame($fn, $e->getFile());
@@ -44,10 +49,39 @@ class OptsTest extends \PHPUnit_Framework_TestCase
         Opts::setHowTruncateTrace($how);
         $this->assertSame($how, Opts::getHowTruncateTrace());
         try {
-            OptHowTruncate::error();
+            OptsHelper::error();
         } catch (ItemNotFound $e) {
         }
         $this->assertSame(__FILE__, $e->getFile());
+    }
+
+    /**
+     * covers setTruncateNativeTrace
+     * covers getTruncateNativeTrace
+     */
+    public function testTruncateNativeTrace()
+    {
+        Opts::setHowTruncateTrace('axy\errors\tests\nstst');
+        $fn = OptsHelper::getFile();
+        Opts::setTruncateNativeTrace(false);
+        $this->assertSame(false, Opts::getTruncateNativeTrace());
+        $e = null;
+        try {
+            OptsHelper::error();
+        } catch (ItemNotFound $e) {
+        }
+        $originalTrace = $e->getTrace();
+        $this->assertSame($fn, $originalTrace[0]['file']);
+        $this->assertEquals(1, count($originalTrace) - count($e->getTruncatedTrace()->items));
+        Opts::setTruncateNativeTrace(true);
+        $this->assertSame(true, Opts::getTruncateNativeTrace());
+        try {
+            OptsHelper::error();
+        } catch (ItemNotFound $e) {
+        }
+        $originalTrace = $e->getTrace();
+        $this->assertEquals(count($originalTrace), count($e->getTruncatedTrace()->items));
+        $this->assertSame(__FILE__, $originalTrace[0]['file']);
     }
 
     /**

@@ -80,6 +80,9 @@ trait TraceTruncate
         $this->file = $this->truncatedTrace->file;
         $this->line = $this->truncatedTrace->line;
         $truncateNativeTrace = $this->truncateNativeTrace;
+        if ($truncateNativeTrace === null) {
+            $truncateNativeTrace = Opts::getTruncateNativeTrace();
+        }
         if ($truncateNativeTrace) {
             SetterTrace::setTrace($this, $this->truncatedTrace->items);
         }
