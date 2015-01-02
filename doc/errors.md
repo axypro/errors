@@ -20,7 +20,7 @@ All classes are inherited from `Error` and from `Runtime` or `Logic` (indicated 
         * [ContainerReadOnly](classes/ContainerReadOnly.md) (logic) - a container is readonly
     * [Pointless](classes/Pointless.md) (logic) - an operation is pointless in this context
     * [Disabled](classes/Disabled.md) (logic) - a service is disabled
- * ActionNotAllowed - this action is not allowed for this object
+ * [ActionNotAllowed](classes/ActionNotAllowed.md) - this action is not allowed for this object
  * InvalidValue - wrong format of a values
     * NotValid - value is not passed through the validators
     * TypingError - value has an wrong type

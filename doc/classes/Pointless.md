@@ -4,7 +4,7 @@
 class Pointless extends Logic implements Forbidden
 ```
 
-An operation is pointless in this context
+An operation is pointless in this context.
 
 For example, a container accumulates a data.
 For simplicity implemented `ArrayAccess`.
