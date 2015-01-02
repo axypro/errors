@@ -16,12 +16,12 @@ $config = [
 $crawler = new Crawler($config); // Crawler config has an invalid format: "timeout must be a number"
 ```
 
-## __construct([$configName [, $errorMessage [, $code [, $previous, $thrower])
+### __construct([$configName [, $errorMessage [, $code [, $previous, $thrower])
 
  * `$configName` - the config name
  * `$errorMessage` - the error message
 
-## Methods
+### Methods
 
  * `getConfigName():string`
  * `getErrorMessage():string`

@@ -21,12 +21,12 @@ $user = new User();
 $user->emial = 'my@example.com'; // Field "emial" is not exist in "User"
 ```
 
-## `__construct([$key, $container [, $previous, $thrower])`
+### `__construct([$key, $container [, $previous, $thrower])`
 
  * `$key` - the name of field
  * `$container` - the container or its name
  
-## Methods
+### Methods
 
  * `getKey():string`
  * `getContainer():object|string`

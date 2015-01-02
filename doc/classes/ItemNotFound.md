@@ -11,12 +11,12 @@ The element was not found but could be (runtime error).
 $id = $request->post->id; // access to $_POST['id'], ?id was not specified
 ```
 
-## `__construct([$key, $container [, $previous, $thrower])`
+### `__construct([$key, $container [, $previous, $thrower])`
 
  * `$key` - the name of field
  * `$container` - the container or its name
  
-## Methods
+### Methods
 
  * `getKey():string`
  * `getContainer():object|string`
