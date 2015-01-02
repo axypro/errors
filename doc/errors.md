@@ -7,8 +7,8 @@ All intermediate errors (which have children) are interfaces.
 All classes are inherited from `Error` and from `Runtime` or `Logic` (indicated in parentheses).
 
  * NotFound - an element of a container is not found
-    * [FieldNotExists](classes/FieldNotExists) (logic) - a static container has not the specific field
-    * [ItemNotFound](classes/ItemNotFound) (runtime) - a container not contains an item in this time
+    * [FieldNotExists](classes/FieldNotExists.md) (logic) - a static container has not the specific field
+    * [ItemNotFound](classes/ItemNotFound.md) (runtime) - a container not contains an item in this time
  * InvalidConfig (logic) - a configuration has invalid format
  * RequiresOverride (logic) - a method requires override
  * Inited 
