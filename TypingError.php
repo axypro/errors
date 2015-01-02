@@ -14,19 +14,20 @@ class TypingError extends Logic implements InvalidValue
     /**
      * {@inheritdoc}
      */
-    protected $defaultMessage = '{{ varname }} must be {{ expected }}';
+    protected $defaultMessage = '{{ varName }} must be {{ expected }}';
 
     /**
      * The constructor
      *
-     * @param string $varname [optional]
+     * @param string $varName [optional]
      * @param string|array $expected [optional]
+     *        the list of the expected types
      * @param \Exception $previous [optional]
      * @param mixed $thrower [optional]
      */
-    public function __construct($varname = null, $expected = null, \Exception $previous = null, $thrower = null)
+    public function __construct($varName = null, $expected = null, \Exception $previous = null, $thrower = null)
     {
-        $this->varname = $varname;
+        $this->varName = $varName;
         if (is_array($expected)) {
             $this->expected = $expected;
             if (count($expected) > 0) {
@@ -46,7 +47,7 @@ class TypingError extends Logic implements InvalidValue
             $expected = 'a different type';
         }
         $message = [
-            'varname' => $varname ?: 'A value',
+            'varName' => $varName ?: 'A value',
             'expected' => $expected,
         ];
         parent::__construct($message, 0, $previous, $thrower);
@@ -55,9 +56,9 @@ class TypingError extends Logic implements InvalidValue
     /**
      * @return string
      */
-    public function getVarname()
+    public function getVarName()
     {
-        return $this->varname;
+        return $this->varName;
     }
 
     /**
@@ -71,7 +72,7 @@ class TypingError extends Logic implements InvalidValue
     /**
      * @var array
      */
-    protected $varname;
+    protected $varName;
 
     /**
      * @var array
