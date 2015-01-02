@@ -1,5 +1,7 @@
 ## dev-master
 
+* InvalidConfig::getErrmsg() is deprecated. Use getErrorMessage(). 
+
 ## 0.0.5 (18.02.2014)
 
 * ActionNotAllowed

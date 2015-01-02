@@ -14,29 +14,29 @@ class InvalidConfig extends Logic
     /**
      * {@inheritdoc}
      */
-    protected $defaultMessage = '{{ config }} has an invalid format: "{{ errmsg }}"';
+    protected $defaultMessage = '{{ configName }} has an invalid format: "{{ errorMessage }}"';
 
     /**
      * The constructor
      *
-     * @param string $config [optional]
+     * @param string $configName [optional]
      *        the config name
-     * @param string $errmsg [optional]
+     * @param string $errorMessage [optional]
      *        the error message
      * @param int $code [optional]
      *        the error code
-     * @param \Exception $previous [optional]
-     * @param mixed $thrower [optional]
+     * @param \Exception $p [optional]
+     * @param mixed $t [optional]
      */
-    public function __construct($config = null, $errmsg = null, $code = 0, \Exception $previous = null, $thrower = null)
+    public function __construct($configName = null, $errorMessage = null, $code = 0, \Exception $p = null, $t = null)
     {
-        $this->configName = $config;
-        $this->errmsg = $errmsg;
+        $this->configName = $configName;
+        $this->errorMessage = $errorMessage;
         $message = [
-            'config' => $config,
-            'errmsg' => $errmsg,
+            'configName' => $configName,
+            'errorMessage' => $errorMessage,
         ];
-        parent::__construct($message, $code, $previous, $thrower);
+        parent::__construct($message, $code, $p, $t);
     }
 
     /**
@@ -48,11 +48,20 @@ class InvalidConfig extends Logic
     }
 
     /**
-     * @return int
+     * @return string
+     */
+    final public function getErrorMessage()
+    {
+        return $this->errorMessage;
+    }
+
+    /**
+     * @deprecated
+     * @return string
      */
     final public function getErrmsg()
     {
-        return $this->errmsg;
+        return $this->errorMessage;
     }
 
     /**
@@ -63,5 +72,5 @@ class InvalidConfig extends Logic
     /**
      * @var int
      */
-    protected $errmsg;
+    protected $errorMessage;
 }
