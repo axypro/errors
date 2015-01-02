@@ -10,7 +10,7 @@ All classes are inherited from `Error` and from `Runtime` or `Logic` (indicated 
     * [FieldNotExists](classes/FieldNotExists.md) (logic) - a static container has not the specific field
     * [ItemNotFound](classes/ItemNotFound.md) (runtime) - a container not contains an item in this time
  * [InvalidConfig](classes/InvalidConfig.md) (logic) - a configuration has invalid format
- * RequiresOverride (logic) - a method requires override
+ * [RequiresOverride](classes/RequiresOverride.md) (logic) - a method requires override
  * Inited 
     * [AlreadyInited](classes/AlreadyInited.md) (logic) - attempt to initialize an already initialized object
     * [NotInited](classes/NotInited.md) (logic) - attempt to use not initialized object
