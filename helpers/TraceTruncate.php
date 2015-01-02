@@ -6,6 +6,7 @@
 namespace axy\errors\helpers;
 
 use axy\backtrace\ExceptionTrace;
+use axy\errors\Opts;
 
 /**
  * Truncate the exception trace
@@ -24,7 +25,7 @@ trait TraceTruncate
      *
      * @var boolean
      */
-    protected $howTruncateTrace = true;
+    protected $howTruncateTrace = null;
 
     /**
      * Returns the filename of the original exception point
@@ -95,6 +96,9 @@ trait TraceTruncate
             return null;
         }
         $options = $this->howTruncateTrace;
+        if ($options === null) {
+            $options = Opts::getHowTruncateTrace();
+        }
         if (!$options) {
             return null;
         }
