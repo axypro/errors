@@ -22,7 +22,7 @@ unset($container['key']); // This action is pointless in the current context
 
 ### `__construct([$previous, $thrower])`
 
- * `$object` - the object or its name
+No own arguments.
 
 ### Methods
 
