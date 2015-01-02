@@ -18,7 +18,7 @@ All classes are inherited from `Error` and from `Runtime` or `Logic` (indicated 
     * ReadOnly
         * [PropertyReadOnly](classes/PropertyReadOnly.md) (logic) - a property is readonly
         * [ContainerReadOnly](classes/ContainerReadOnly.md) (logic) - a container is readonly
-    * Pointless (logic) - an operation is pointless in this context
+    * [Pointless](classes/Pointless.md) (logic) - an operation is pointless in this context
     * Disabled (logic) - a service is disabled
  * ActionNotAllowed - this action is not allowed for this object
  * InvalidValue - wrong format of a values
