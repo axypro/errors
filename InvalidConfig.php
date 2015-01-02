@@ -54,16 +54,6 @@ class InvalidConfig extends Logic
     {
         return $this->errorMessage;
     }
-
-    /**
-     * @deprecated
-     * @return string
-     */
-    final public function getErrmsg()
-    {
-        return $this->errorMessage;
-    }
-
     /**
      * @var string
      */

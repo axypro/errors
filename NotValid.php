@@ -54,15 +54,6 @@ class NotValid extends Logic implements InvalidValue
     }
 
     /**
-     * @deprecated
-     * @return string
-     */
-    final public function getErrmsg()
-    {
-        return $this->errorMessage;
-    }
-
-    /**
      * @var string
      */
     protected $varName;
