@@ -23,7 +23,7 @@ All classes are inherited from `Error` and from `Runtime` or `Logic` (indicated 
  * [ActionNotAllowed](classes/ActionNotAllowed.md) - this action is not allowed for this object
  * InvalidValue - wrong format of a values
     * [NotValid](classes/NotValid.md) - value is not passed through the validators
-    * TypingError - value has an wrong type
+    * [TypingError](classes/TypingError.md) - value has an wrong type
 
 ## Constructors and methods
 
