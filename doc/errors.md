@@ -7,8 +7,8 @@ All intermediate errors (which have children) are interfaces.
 All classes are inherited from `Error` and from `Runtime` or `Logic` (indicated in parentheses).
 
  * NotFound - an element of a container is not found
-    * FieldNotExists (logic) - a static container has not the specific field
-    * ItemNotFound (runtime) - a container not contains an item in this time
+    * [FieldNotExists](classes/FieldNotExists) (logic) - a static container has not the specific field
+    * [ItemNotFound](classes/ItemNotFound) (runtime) - a container not contains an item in this time
  * InvalidConfig (logic) - a configuration has invalid format
  * RequiresOverride (logic) - a method requires override
  * Inited 
@@ -24,3 +24,14 @@ All classes are inherited from `Error` and from `Runtime` or `Logic` (indicated 
  * InvalidValue - wrong format of a values
     * NotValid - value is not passed through the validators
     * TypingError - value has an wrong type
+
+## Constructors and methods
+
+Constructors of all these classes take as last arguments (optional)
+
+ * `previous` (Exception) - the previous exception used for the exception chaining
+ * `thrower` (object|string) - see [truncate backtrace](backtrace.md)
+
+All other arguments also are optional.
+
+Such arguments as container or service can be a string (the name of service) or an object (itself service).
