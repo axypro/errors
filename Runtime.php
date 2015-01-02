@@ -6,12 +6,14 @@
 
 namespace axy\errors;
 
+use axy\errors\helpers\ErrorTrait;
+
 /**
  * The basic runtime-error in the axy hierarchy
  */
 class Runtime extends \RuntimeException implements Error
 {
-    use helpers\ErrorTrait;
+    use ErrorTrait;
 
     /**
      * The constructor

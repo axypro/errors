@@ -6,12 +6,14 @@
 
 namespace axy\errors;
 
+use axy\errors\helpers\ErrorTrait;
+
 /**
  * The basic logic-error in the axy hierarchy
  */
 class Logic extends \LogicException implements Error
 {
-    use helpers\ErrorTrait;
+    use ErrorTrait;
 
     /**
      * The constructor
