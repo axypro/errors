@@ -7,6 +7,7 @@ namespace axy\errors\tests\nstst;
 
 use axy\errors\InvalidConfig;
 use axy\errors\tests\nstst\errors\Pointless;
+use axy\errors\tests\nstst\errors\Truncated;
 
 class Invalid
 {
@@ -48,6 +49,14 @@ class Invalid
     }
 
     /**
+     * @throws Truncated
+     */
+    public function truncated()
+    {
+        $this->throwTruncated();
+    }
+
+    /**
      * @param int $x
      * @param int $y
      * @throws InvalidConfig
@@ -55,6 +64,11 @@ class Invalid
     private function cont($x, $y)
     {
         $this->finish($x + $y);
+    }
+
+    private function throwTruncated()
+    {
+        throw new Truncated('truncated');
     }
 
     /**

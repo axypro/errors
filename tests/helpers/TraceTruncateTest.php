@@ -8,6 +8,7 @@ namespace axy\errors\tests\helpers;
 use axy\errors\InvalidConfig;
 use axy\errors\tests\nstst\errors\InvalidConfig as CustomInvalidConfig;
 use axy\errors\tests\nstst\errors\Pointless;
+use axy\errors\tests\nstst\errors\Truncated;
 use axy\errors\tests\nstst\Invalid;
 use axy\errors\tests\nstst\Container;
 
@@ -63,6 +64,7 @@ class TraceTruncateTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($e->getTrace(), $trace->originalItems);
         $this->assertSame($context->obj->file, $trace->originalItems[0]['file']);
         $this->assertSame($context->file, $trace->items[0]['file']);
+        $this->assertSame(2, count($e->getTrace()) - count($trace));
     }
 
     public function testAxyNS()
@@ -118,6 +120,22 @@ class TraceTruncateTest extends \PHPUnit_Framework_TestCase
         }
         $this->assertSame($obj->file, $e->getFile());
         $this->assertSame($obj->line, $e->getLine());
+    }
+
+    public function testNativeTruncate()
+    {
+        $obj = new Invalid(true);
+        try {
+            $obj->truncated();
+            $this->fail('not thrown');
+        } catch (Truncated $e) {
+        }
+        $originalTrace = $e->getTrace();
+        $truncatedTrace = $e->getTruncatedTrace()->items;
+        $this->assertNotEmpty($originalTrace);
+        $this->assertEquals(count($originalTrace), count($truncatedTrace));
+        $this->assertEquals($originalTrace[0], $truncatedTrace[0]);
+        $this->assertEquals(__FILE__, $originalTrace[0]['file']);
     }
 
     public function testThrowerNull()

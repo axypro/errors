@@ -23,9 +23,16 @@ trait TraceTruncate
      * true - go up one level namespace
      * false - do not truncate
      *
-     * @var boolean
+     * @var mixed
      */
     protected $howTruncateTrace = null;
+
+    /**
+     * Do truncate the native trace?
+     *
+     * @var null
+     */
+    protected $truncateNativeTrace = null;
 
     /**
      * Returns the filename of the original exception point
@@ -72,6 +79,10 @@ trait TraceTruncate
         $this->truncatedTrace->truncate($options);
         $this->file = $this->truncatedTrace->file;
         $this->line = $this->truncatedTrace->line;
+        $truncateNativeTrace = $this->truncateNativeTrace;
+        if ($truncateNativeTrace) {
+            SetterTrace::setTrace($this, $this->truncatedTrace->items);
+        }
     }
 
     /**
