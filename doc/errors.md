@@ -22,7 +22,7 @@ All classes are inherited from `Error` and from `Runtime` or `Logic` (indicated 
     * [Disabled](classes/Disabled.md) (logic) - a service is disabled
  * [ActionNotAllowed](classes/ActionNotAllowed.md) - this action is not allowed for this object
  * InvalidValue - wrong format of a values
-    * NotValid - value is not passed through the validators
+    * [NotValid](classes/NotValid.md) - value is not passed through the validators
     * TypingError - value has an wrong type
 
 ## Constructors and methods

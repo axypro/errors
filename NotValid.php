@@ -14,52 +14,61 @@ class NotValid extends Logic implements InvalidValue
     /**
      * {@inheritdoc}
      */
-    protected $defaultMessage = 'Value of {{ varname }} is not valid: {{ errmsg }}';
+    protected $defaultMessage = 'Value of {{ varName }} is not valid: {{ errorMessage }}';
 
     /**
      * The constructor
      *
-     * @param string $varname [optional]
+     * @param string $varName [optional]
      *        name of a variable who contains the value
-     * @param string $errmsg [optional]
+     * @param string $errorMessage [optional]
      *        the error message
      * @param \Exception $previous [optional]
      * @param mixed $thrower [optional]
      */
-    public function __construct($varname = null, $errmsg = null, \Exception $previous = null, $thrower = null)
+    public function __construct($varName = null, $errorMessage = null, \Exception $previous = null, $thrower = null)
     {
         $message = [
-            'varname' => $varname,
-            'errmsg' => $errmsg,
+            'varName' => $varName,
+            'errorMessage' => $errorMessage,
         ];
-        $this->varname = $varname;
-        $this->errmsg = $errmsg;
+        $this->varName = $varName;
+        $this->errorMessage = $errorMessage;
         parent::__construct($message, 0, $previous, $thrower);
     }
 
     /**
      * @return string
      */
-    final public function getVarname()
+    final public function getVarName()
     {
-        return $this->varname;
+        return $this->varName;
     }
 
     /**
      * @return string
      */
+    final public function getErrorMessage()
+    {
+        return $this->errorMessage;
+    }
+
+    /**
+     * @deprecated
+     * @return string
+     */
     final public function getErrmsg()
     {
-        return $this->errmsg;
+        return $this->errorMessage;
     }
 
     /**
      * @var string
      */
-    protected $varname;
+    protected $varName;
 
     /**
      * @var string
      */
-    protected $errmsg;
+    protected $errorMessage;
 }

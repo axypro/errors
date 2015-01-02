@@ -20,9 +20,10 @@ class NotValidTest extends \PHPUnit_Framework_TestCase
     public function testCreate()
     {
         $previous = new \RuntimeException('msg');
-        $e = new NotValid('email', 'is empty', $previous);
-        $this->assertSame('email', $e->getVarname());
-        $this->assertSame('is empty', $e->getErrmsg());
+        $e = new NotValid('email', 'is empty',
+            $previous);
+        $this->assertSame('email', $e->getVarName());
+        $this->assertSame('is empty', $e->getErrorMessage());
         $this->assertSame($previous, $e->getPrevious());
         $this->assertSame('Value of email is not valid: is empty', $e->getMessage());
     }
