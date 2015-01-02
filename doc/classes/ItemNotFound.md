@@ -1,6 +1,10 @@
-# `ItemNotFound` extends `Runtime` implements `NotFound`
+# `ItemNotFound`
 
-The container contains a changing set of elements.
+```php
+class ItemNotFound extends Runtime implements NotFound
+```
+
+The container contains changing set of elements.
 The element was not found but could be (runtime error).
 
 ```php

@@ -1,6 +1,10 @@
-# `FieldNotExists` extends `Logic` implements `NotFound`
+# `FieldNotExists`
 
-A container contains a fixed set of fields.
+```phph
+class FieldNotExists extends Logic implements NotFound
+```
+
+The container contains fixed set of fields.
 Attempt to access a non-existent field, usually a consequence of misspelling (logic error).
 
 ```php
