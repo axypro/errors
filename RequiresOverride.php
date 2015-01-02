@@ -9,7 +9,7 @@ namespace axy\errors;
 /**
  * A method requires override
  */
-class RequiresOverride extends Logic implements ReadOnly
+class RequiresOverride extends Logic implements Error
 {
     /**
      * {@inheritdoc}
