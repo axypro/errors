@@ -1,5 +1,7 @@
 ## dev-master
 
+* Optional truncate native trace
+* Opts: Global options of the library
 * InvalidConfig::getErrmsg() is deprecated. Use getErrorMessage(). 
 
 ## 0.0.5 (18.02.2014)

@@ -12,8 +12,8 @@ All classes are inherited from `Error` and from `Runtime` or `Logic` (indicated 
  * [InvalidConfig](classes/InvalidConfig.md) (logic) - a configuration has invalid format
  * RequiresOverride (logic) - a method requires override
  * Inited 
-    * AlreadyInited (logic) - attempt to initialize an already initialized object
-    * NotInited (logic) - attempt to use not initialized object
+    * [AlreadyInited](classes/AlreadyInited.md) (logic) - attempt to initialize an already initialized object
+    * [NotInited](classes/NotInited.md) (logic) - attempt to use not initialized object
  * Forbidden - an action is forbidden
     * ReadOnly
         * PropertyReadOnly (logic) - a property is readonly
