@@ -121,3 +121,5 @@ Possible values:
 
  * string - the root namespace of the library
  * object - truncate to the namespace of this object
+
+When specified `$thrower` then `$howTruncateTrace` is ignored.
