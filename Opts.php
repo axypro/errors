@@ -8,6 +8,8 @@ namespace axy\errors;
 
 /**
  * Global options of the library
+ *
+ * @link https://github.com/axypro/errors/blob/master/doc/Opts.md documentation
  */
 class Opts
 {

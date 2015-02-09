@@ -8,6 +8,8 @@ namespace axy\errors;
 
 /**
  * This property is read-only
+ *
+ * @link https://github.com/axypro/errors/blob/master/doc/classes/PropertyReadOnly.md documentation
  */
 class PropertyReadOnly extends Logic implements ReadOnly
 {

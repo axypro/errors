@@ -8,6 +8,8 @@ namespace axy\errors;
 
 /**
  * A method requires override
+ *
+ * @link https://github.com/axypro/errors/blob/master/doc/classes/RequiresOverride.md documentation
  */
 class RequiresOverride extends Logic implements Error
 {

@@ -8,6 +8,8 @@ namespace axy\errors;
 
 /**
  * The basic error in the axy hierarchy
+ *
+ * @link https://github.com/axypro/errors/blob/master/doc/errors.md documentation
  */
 interface Error
 {

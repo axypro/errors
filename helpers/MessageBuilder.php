@@ -1,6 +1,7 @@
 <?php
 /**
  * @package axy\errors
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 
 namespace axy\errors\helpers;
@@ -8,7 +9,7 @@ namespace axy\errors\helpers;
 /**
  * The error message builder
  *
- * @author Oleg Grigoriev <go.vasac@gmail.com>
+ * @link https://github.com/axypro/errors/blob/master/doc/message.md documentation
  */
 trait MessageBuilder
 {

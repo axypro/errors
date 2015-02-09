@@ -8,6 +8,8 @@ namespace axy\errors;
 
 /**
  * An object is not initialized
+ *
+ * @link https://github.com/axypro/errors/blob/master/doc/classes/NotInited.md documentation
  */
 class NotInited extends Logic implements ReadOnly
 {

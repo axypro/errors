@@ -8,6 +8,8 @@ namespace axy\errors;
 
 /**
  * This service is disabled in the current environment
+ *
+ * @link https://github.com/axypro/errors/blob/master/doc/classes/Disabled.md documentation
  */
 class Disabled extends Logic implements Forbidden
 {

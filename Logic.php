@@ -10,6 +10,8 @@ use axy\errors\helpers\ErrorTrait;
 
 /**
  * The basic logic-error in the axy hierarchy
+ *
+ * @link https://github.com/axypro/errors/blob/master/doc/errors.md documentation
  */
 class Logic extends \LogicException implements Error
 {

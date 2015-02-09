@@ -8,6 +8,8 @@ namespace axy\errors;
 
 /**
  * Attempt to re-initialize an object
+ *
+ * @link https://github.com/axypro/errors/blob/master/doc/classes/AlreadyInited.md documentation
  */
 class AlreadyInited extends Logic implements ReadOnly
 {

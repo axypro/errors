@@ -1,6 +1,7 @@
 <?php
 /**
  * @package axy\errors
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 
 namespace axy\errors;
@@ -8,7 +9,7 @@ namespace axy\errors;
 /**
  * This container is read-only
  *
- * @author Oleg Grigoriev <go.vasac@gmail.com>
+ * @link https://github.com/axypro/errors/blob/master/doc/classes/ContainerReadOnly.md documentation
  */
 class ContainerReadOnly extends Logic implements ReadOnly
 {

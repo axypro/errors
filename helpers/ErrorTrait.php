@@ -1,14 +1,13 @@
 <?php
 /**
  * @package axy\errors
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 
 namespace axy\errors\helpers;
 
 /**
  * The trait for common actions of Runtime and Logic exceptions
- *
- * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 trait ErrorTrait
 {

@@ -8,6 +8,8 @@ namespace axy\errors;
 
 /**
  * A value is not valid for this action
+ *
+ * @link https://github.com/axypro/errors/blob/master/doc/classes/NotValid.md documentation
  */
 class NotValid extends Logic implements InvalidValue
 {

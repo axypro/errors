@@ -8,6 +8,8 @@ namespace axy\errors;
 
 /**
  * An item was not found in a variable container at the current moment
+ *
+ * @link https://github.com/axypro/errors/blob/master/doc/classes/ItemNotFound.md documentation
  */
 class ItemNotFound extends Runtime implements NotFound
 {

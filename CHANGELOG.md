@@ -1,3 +1,9 @@
+## 1.0.1 (09.02.2015)
+
+* @links to the documentation
+* Refactoring composer.json
+* Inspect code
+
 ## 1.0.0 (02.01.2015)
 
 * Optional truncate native trace

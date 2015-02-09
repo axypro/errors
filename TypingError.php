@@ -8,6 +8,8 @@ namespace axy\errors;
 
 /**
  * The error of a value type
+ *
+ * @link https://github.com/axypro/errors/blob/master/doc/classes/TypingError.md documentation
  */
 class TypingError extends Logic implements InvalidValue
 {

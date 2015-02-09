@@ -8,6 +8,8 @@ namespace axy\errors;
 
 /**
  * This action is not allowed for this object
+ *
+ * @link https://github.com/axypro/errors/blob/master/doc/classes/ActionNotAllowed.md documentation
  */
 class ActionNotAllowed extends Logic
 {

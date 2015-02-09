@@ -8,6 +8,8 @@ namespace axy\errors;
 
 /**
  * A field does not exist in a fixed list of the container
+ *
+ * @link https://github.com/axypro/errors/blob/master/doc/classes/FieldNotExists.md documentation
  */
 class FieldNotExist extends Logic implements NotFound
 {

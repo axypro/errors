@@ -8,6 +8,8 @@ namespace axy\errors;
 
 /**
  * A configuration has an invalid format
+ *
+ * @link https://github.com/axypro/errors/blob/master/doc/classes/InvalidConfig.md documentation
  */
 class InvalidConfig extends Logic
 {

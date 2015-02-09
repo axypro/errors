@@ -1,6 +1,7 @@
 <?php
 /**
  * @package axy\errors
+ * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
 
 namespace axy\errors\helpers;
@@ -11,7 +12,7 @@ use axy\errors\Opts;
 /**
  * Truncate the exception trace
  *
- * @author Oleg Grigoriev <go.vasac@gmail.com>
+ * @link https://github.com/axypro/errors/blob/master/doc/backtrace.md documentation
  */
 trait TraceTruncate
 {

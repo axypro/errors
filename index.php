@@ -7,7 +7,7 @@
  * @license https://raw.github.com/axypro/errors/master/LICENSE MIT
  * @link https://github.com/axypro/errors repository
  * @link https://github.com/axypro/errors/blob/master/doc/README.md documentation
- * @link https://packagist.org/packages/axy/errors on packagist.org
+ * @link https://packagist.org/packages/axy/errors composer
  * @uses PHP5.4+
  */
 
