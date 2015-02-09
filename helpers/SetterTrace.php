@@ -31,6 +31,7 @@ class SetterTrace
     public function __construct(\Exception $e)
     {
         $this->set = function ($trace) {
+            /** @noinspection PhpUndefinedFieldInspection */
             $this->trace = $trace;
         };
         $this->set = $this->set->bindTo($e, 'Exception');

@@ -21,6 +21,7 @@ class ItemNotFoundTest extends \PHPUnit_Framework_TestCase
     public function testCreate()
     {
         $container = new Container(5);
+        $e = null;
         try {
             $container->getUndefinedItem('qwe');
             $this->fail('not thrown');

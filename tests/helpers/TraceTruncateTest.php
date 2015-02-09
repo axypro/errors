@@ -11,6 +11,7 @@ use axy\errors\tests\nstst\errors\Pointless;
 use axy\errors\tests\nstst\errors\Truncated;
 use axy\errors\tests\nstst\Invalid;
 use axy\errors\tests\nstst\Container;
+use axy\errors\tests\nstst\ContextTruncated;
 
 /**
  * coversDefaultClass axy\errors\helpers\TraceTruncate
@@ -21,23 +22,25 @@ class TraceTruncateTest extends \PHPUnit_Framework_TestCase
      * test*() methods invoked via Reflection (has not key "file")
      *
      * @param boolean $inherit
-     * @return object
+     * @return \axy\errors\tests\nstst\ContextTruncated
      */
     private function getErrorContext($inherit)
     {
         $obj = new Invalid($inherit);
+        $line = null;
+        $e = null;
         try {
             $line = __LINE__ + 1;
             $obj->begin(1);
             $this->fail('not thrown');
         } catch (InvalidConfig $e) {
         }
-        return (object)[
-            'obj' => $obj,
-            'line' => $line,
-            'file' => __FILE__,
-            'e' => $e,
-        ];
+        $context = new ContextTruncated();
+        $context->obj = $obj;
+        $context->line = $line;
+        $context->file = __FILE__;
+        $context->e = $e;
+        return $context;
     }
 
     public function testCustomNS()
@@ -91,6 +94,7 @@ class TraceTruncateTest extends \PHPUnit_Framework_TestCase
 
     public function testOutNS()
     {
+        $line = null;
         try {
             $line = __LINE__ + 1;
             throw new CustomInvalidConfig();
@@ -113,6 +117,7 @@ class TraceTruncateTest extends \PHPUnit_Framework_TestCase
     public function testNotTruncate()
     {
         $obj = new Invalid(true);
+        $e = null;
         try {
             $obj->pointless();
             $this->fail('not thrown');
@@ -125,6 +130,7 @@ class TraceTruncateTest extends \PHPUnit_Framework_TestCase
     public function testNativeTruncate()
     {
         $obj = new Invalid(true);
+        $e = null;
         try {
             $obj->truncated();
             $this->fail('not thrown');
@@ -140,6 +146,8 @@ class TraceTruncateTest extends \PHPUnit_Framework_TestCase
 
     public function testThrowerNull()
     {
+        $line = null;
+        $e = null;
         try {
             $line = __LINE__ + 1;
             Container::thrower(null);
@@ -152,6 +160,7 @@ class TraceTruncateTest extends \PHPUnit_Framework_TestCase
 
     public function testThrowerThis()
     {
+        $e = null;
         try {
             Container::thrower(true);
             $this->fail('not thrown');
@@ -163,6 +172,8 @@ class TraceTruncateTest extends \PHPUnit_Framework_TestCase
 
     public function testThrowerNS()
     {
+        $line = null;
+        $e = null;
         try {
             $line = __LINE__ + 1;
             Container::thrower('axy\errors\tests\nstst');

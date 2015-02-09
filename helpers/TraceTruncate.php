@@ -71,19 +71,23 @@ trait TraceTruncate
      */
     private function truncateTrace($thrower)
     {
+        /** @noinspection PhpUndefinedFieldInspection */
         $this->truncatedTrace = new ExceptionTrace($this->getTrace(), $this->file, $this->line);
         $options = $this->createOptionsForTruncateTrace($thrower);
         if (!$options) {
             return;
         }
         $this->truncatedTrace->truncate($options);
+        /** @noinspection PhpUndefinedFieldInspection */
         $this->file = $this->truncatedTrace->file;
+        /** @noinspection PhpUndefinedFieldInspection */
         $this->line = $this->truncatedTrace->line;
         $truncateNativeTrace = $this->truncateNativeTrace;
         if ($truncateNativeTrace === null) {
             $truncateNativeTrace = Opts::getTruncateNativeTrace();
         }
         if ($truncateNativeTrace) {
+            /** @noinspection PhpParamsInspection */
             SetterTrace::setTrace($this, $this->truncatedTrace->items);
         }
     }

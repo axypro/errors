@@ -5,7 +5,9 @@
 
 namespace axy\errors\tests\nstst\errors;
 
-class Truncated extends \axy\errors\Pointless implements Error
+use axy\errors\Pointless as StandardPointless;
+
+class Truncated extends StandardPointless implements Error
 {
     /**
      * {@inheritdoc}

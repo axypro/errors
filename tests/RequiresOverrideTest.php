@@ -31,6 +31,7 @@ class RequiresOverrideTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateBacktrace()
     {
+        $e = null;
         try {
             $this->methodToOverride();
         } catch (RequiresOverride $e) {

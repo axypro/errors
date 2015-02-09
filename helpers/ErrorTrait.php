@@ -30,6 +30,7 @@ trait ErrorTrait
     public function callErrorTrait($message, $code, $previous, $thrower)
     {
         $message = $this->createMessage($message, $code);
+        /** @noinspection PhpUndefinedClassInspection */
         parent::__construct($message, $code, $previous);
         $this->truncateTrace($thrower);
     }

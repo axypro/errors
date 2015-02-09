@@ -21,6 +21,7 @@ class FieldNotExistTest extends \PHPUnit_Framework_TestCase
     public function testCreate()
     {
         $container = new Container(7);
+        $e = null;
         try {
             $container->getUnknownField('prop');
             $this->fail('not thrown');
