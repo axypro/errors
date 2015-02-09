@@ -11,7 +11,7 @@ namespace axy\errors;
  *
  * @link https://github.com/axypro/errors/blob/master/doc/classes/NotInited.md documentation
  */
-class NotInited extends Logic implements ReadOnly
+class NotInited extends Logic implements Init
 {
     /**
      * {@inheritdoc}

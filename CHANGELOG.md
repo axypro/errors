@@ -1,5 +1,6 @@
 ## 1.0.1 (09.02.2015)
 
+* Fixed the Init-errors hierarchy
 * @links to the documentation
 * Refactoring composer.json
 * Inspect code
