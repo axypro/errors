@@ -24,6 +24,8 @@ All classes are inherited from `Error` and from `Runtime` or `Logic` (indicated 
  * InvalidValue - wrong format of a values
     * [NotValid](classes/NotValid.md) - value is not passed through the validators
     * [TypingError](classes/TypingError.md) - value has an wrong type
+ * [DependencyError] - an error associated with dependency (extension, composer package, plugin)
+    * [NotInstalled] - a dependency is not installed
 
 ## Constructors and methods
 

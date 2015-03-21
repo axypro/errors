@@ -16,7 +16,7 @@ class ActionNotAllowed extends Logic
     /**
      * {@inheritdoc}
      */
-    protected $defaultMessage = 'Action "{{ action }}" is not allowed for {{ object }} ({{ reason}})';
+    protected $defaultMessage = 'Action "{{ action }}" is not allowed for {{ object }} ({{ reason }})';
 
     /**
      * The constructor
