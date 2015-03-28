@@ -1,4 +1,4 @@
-## dev-master
+## 1.0.2 (28.03.2015)
 
 * DependencyError
 * NotInstalled
