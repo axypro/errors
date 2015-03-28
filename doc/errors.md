@@ -9,6 +9,7 @@ All classes are inherited from `Error` and from `Runtime` or `Logic` (indicated 
  * NotFound - an element of a container is not found
     * [FieldNotExists](classes/FieldNotExists.md) (logic) - a static container has not the specific field
     * [ItemNotFound](classes/ItemNotFound.md) (runtime) - a container not contains an item in this time
+    * [AdapterNotDefined](classes/AdapterNotDefined.md) (logic) - a adapter is not defined for this service
  * [InvalidConfig](classes/InvalidConfig.md) (logic) - a configuration has invalid format
  * [RequiresOverride](classes/RequiresOverride.md) (logic) - a method requires override
  * Init
