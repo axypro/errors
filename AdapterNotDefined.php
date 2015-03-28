@@ -7,7 +7,7 @@
 namespace axy\errors;
 
 /**
- * A adapter is not defined for this service
+ * An adapter is not defined for this service
  *
  * @link https://github.com/axypro/errors/blob/master/doc/classes/AdapterNotDefined.md documentation
  */
