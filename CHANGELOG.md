@@ -1,3 +1,8 @@
+## 1.0.3 (10.11.2015)
+
+* Exclude tests, docs and etc from GitHub zip and Composer package dist
+* A little refactoring and code style
+
 ## 1.0.2 (28.03.2015)
 
 * DependencyError
