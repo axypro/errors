@@ -44,6 +44,7 @@ class SetterTrace
      */
     public function __invoke(array $trace)
     {
+        /** @noinspection PhpMethodParametersCountMismatchInspection */
         $this->set->__invoke($trace);
     }
 

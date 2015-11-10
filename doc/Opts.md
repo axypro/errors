@@ -22,4 +22,4 @@ But since it does not affect the functionality, but only on debug information th
 
 Overriding properties as `howTruncateTrace` and `truncateNativeTrace` affects only the classes themselves and their children.
 
-Setting values using `Opts` has an effect on all classes (except where overriden).
+Setting values using `Opts` has an effect on all classes (except where overridden).

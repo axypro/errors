@@ -73,6 +73,7 @@ trait TraceTruncate
     private function truncateTrace($thrower)
     {
         /** @noinspection PhpUndefinedFieldInspection */
+        /** @noinspection PhpUndefinedMethodInspection */
         $this->truncatedTrace = new ExceptionTrace($this->getTrace(), $this->file, $this->line);
         $options = $this->createOptionsForTruncateTrace($thrower);
         if (!$options) {

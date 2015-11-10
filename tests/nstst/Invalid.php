@@ -63,6 +63,7 @@ class Invalid
      */
     private function cont($x, $y)
     {
+        /** @noinspection PhpMethodParametersCountMismatchInspection */
         $this->finish($x + $y);
     }
 
