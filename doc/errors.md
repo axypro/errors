@@ -27,7 +27,7 @@ All classes are inherited from `Error` and from `Runtime` or `Logic` (indicated 
     * [TypingError](classes/TypingError.md) - value has an wrong type
  * DependencyError - an error associated with dependency (extension, composer package, plugin)
     * [NotInstalled](classes/NotInstalled.md) - a dependency is not installed
- * []InvalidFormat](classes/InvalidFormat.md) - invalid format of some string
+ * [InvalidFormat](classes/InvalidFormat.md) - invalid format of some string
 
 ## Constructors and methods
 
