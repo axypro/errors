@@ -26,7 +26,7 @@ class SetterTraceTest extends \PHPUnit_Framework_TestCase
         $trace = [
             [
                 'class' => 'MyClass',
-                'function' => 'mymethod',
+                'function' => 'myMethod',
             ],
         ];
         SetterTrace::setTrace($e, $trace);

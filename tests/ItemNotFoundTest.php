@@ -6,7 +6,7 @@
 namespace axy\errors\tests;
 
 use axy\errors\ItemNotFound;
-use axy\errors\tests\nstst\Container;
+use axy\errors\tests\tst\Container;
 
 /**
  * coversDefaultClass axy\errors\ItemNotFound

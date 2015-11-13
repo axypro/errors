@@ -3,7 +3,7 @@
  * @package axy\errors
  */
 
-namespace axy\errors\tests\nstst;
+namespace axy\errors\tests\tst;
 
 class ContextTruncated
 {
@@ -13,7 +13,7 @@ class ContextTruncated
     public $line;
 
     /**
-     * @var \axy\errors\tests\nstst\Invalid
+     * @var \axy\errors\tests\tst\Invalid
      */
     public $obj;
 

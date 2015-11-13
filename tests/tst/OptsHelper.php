@@ -3,7 +3,7 @@
  * @package axy\errors
  */
 
-namespace axy\errors\tests\nstst;
+namespace axy\errors\tests\tst;
 
 use axy\errors\ItemNotFound;
 

@@ -3,11 +3,11 @@
  * @package axy\errors
  */
 
-namespace axy\errors\tests\nstst;
+namespace axy\errors\tests\tst;
 
 use axy\errors\InvalidConfig;
-use axy\errors\tests\nstst\errors\Pointless;
-use axy\errors\tests\nstst\errors\Truncated;
+use axy\errors\tests\tst\errors\Pointless;
+use axy\errors\tests\tst\errors\Truncated;
 
 class Invalid
 {

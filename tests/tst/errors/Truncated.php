@@ -3,7 +3,7 @@
  * @package axy\errors
  */
 
-namespace axy\errors\tests\nstst\errors;
+namespace axy\errors\tests\tst\errors;
 
 use axy\errors\Pointless as StandardPointless;
 

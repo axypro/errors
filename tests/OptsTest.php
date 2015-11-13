@@ -7,7 +7,7 @@ namespace axy\errors\tests;
 
 use axy\errors\Opts;
 use axy\errors\ItemNotFound;
-use axy\errors\tests\nstst\OptsHelper;
+use axy\errors\tests\tst\OptsHelper;
 
 /**
  * coversDefaultClass axy\errors\Opts
@@ -45,7 +45,7 @@ class OptsTest extends \PHPUnit_Framework_TestCase
         } catch (ItemNotFound $e) {
         }
         $this->assertSame($fn, $e->getFile());
-        $how = 'axy\errors\tests\nstst';
+        $how = 'axy\errors\tests\tst';
         Opts::setHowTruncateTrace($how);
         $this->assertSame($how, Opts::getHowTruncateTrace());
         try {
@@ -61,7 +61,7 @@ class OptsTest extends \PHPUnit_Framework_TestCase
      */
     public function testTruncateNativeTrace()
     {
-        Opts::setHowTruncateTrace('axy\errors\tests\nstst');
+        Opts::setHowTruncateTrace('axy\errors\tests\tst');
         $fn = OptsHelper::getFile();
         Opts::setTruncateNativeTrace(false);
         $this->assertSame(false, Opts::getTruncateNativeTrace());

@@ -3,7 +3,7 @@
  * @package axy\errors
  */
 
-namespace axy\errors\tests\nstst;
+namespace axy\errors\tests\tst;
 
 use axy\errors\FieldNotExist;
 use axy\errors\ItemNotFound;
@@ -46,7 +46,7 @@ class Container
 
     /**
      * @param mixed $ns
-     * @throws \axy\errors\tests\nstst\errors\InvalidConfig
+     * @throws \axy\errors\tests\tst\errors\InvalidConfig
      */
     public static function thrower($ns)
     {

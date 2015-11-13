@@ -6,12 +6,12 @@
 namespace axy\errors\tests\helpers;
 
 use axy\errors\InvalidConfig;
-use axy\errors\tests\nstst\errors\InvalidConfig as CustomInvalidConfig;
-use axy\errors\tests\nstst\errors\Pointless;
-use axy\errors\tests\nstst\errors\Truncated;
-use axy\errors\tests\nstst\Invalid;
-use axy\errors\tests\nstst\Container;
-use axy\errors\tests\nstst\ContextTruncated;
+use axy\errors\tests\tst\errors\InvalidConfig as CustomInvalidConfig;
+use axy\errors\tests\tst\errors\Pointless;
+use axy\errors\tests\tst\errors\Truncated;
+use axy\errors\tests\tst\Invalid;
+use axy\errors\tests\tst\Container;
+use axy\errors\tests\tst\ContextTruncated;
 
 /**
  * coversDefaultClass axy\errors\helpers\TraceTruncate
@@ -22,7 +22,7 @@ class TraceTruncateTest extends \PHPUnit_Framework_TestCase
      * test*() methods invoked via Reflection (has not key "file")
      *
      * @param boolean $inherit
-     * @return \axy\errors\tests\nstst\ContextTruncated
+     * @return \axy\errors\tests\tst\ContextTruncated
      */
     private function getErrorContext($inherit)
     {
@@ -52,7 +52,7 @@ class TraceTruncateTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('axy\errors\Error', $e);
         $this->assertInstanceOf('axy\errors\Logic', $e);
         $this->assertInstanceOf('axy\errors\InvalidConfig', $e);
-        $this->assertInstanceOf('\axy\errors\tests\nstst\errors\Error', $e);
+        $this->assertInstanceOf('\axy\errors\tests\tst\errors\Error', $e);
         $this->assertSame('Config has an invalid format: "errmsg"', $e->getMessage());
         $this->assertSame($context->file, $e->getFile());
         $this->assertSame($context->line, $e->getLine());
@@ -75,7 +75,7 @@ class TraceTruncateTest extends \PHPUnit_Framework_TestCase
         $context = $this->getErrorContext(false);
         $e = $context->e;
         $this->assertInstanceOf('axy\errors\InvalidConfig', $e);
-        $this->assertNotInstanceOf('\axy\errors\tests\nstst\errors\Error', $e);
+        $this->assertNotInstanceOf('\axy\errors\tests\tst\errors\Error', $e);
         $this->assertSame('Config has an invalid format: "no msg"', $e->getMessage());
         $this->assertSame($context->obj->file, $e->getFile());
         $this->assertSame($context->obj->line, $e->getLine());
@@ -176,7 +176,7 @@ class TraceTruncateTest extends \PHPUnit_Framework_TestCase
         $e = null;
         try {
             $line = __LINE__ + 1;
-            Container::thrower('axy\errors\tests\nstst');
+            Container::thrower('axy\errors\tests\tst');
             $this->fail('not thrown');
         } catch (CustomInvalidConfig $e) {
         }

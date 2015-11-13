@@ -3,9 +3,9 @@
  * @package axy\errors
  */
 
-namespace axy\errors\tests\nstst\thrower;
+namespace axy\errors\tests\tst\thrower;
 
-use \axy\errors\tests\nstst\errors\InvalidConfig;
+use \axy\errors\tests\tst\errors\InvalidConfig;
 
 class Thrower
 {

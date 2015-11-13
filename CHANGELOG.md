@@ -1,7 +1,7 @@
 ## 1.0.4 (13.11.2015)
 
 * InvalidFormat
-
+* Code style
 
 ## 1.0.3 (10.11.2015)
 
@@ -55,13 +55,13 @@
 
 ## 0.0.1 (22.12.2013)
 
-* Message templating
+* Message template
 * Truncate backtrace
 * Error
 * Logic
 * Runtime
 * NotFound (FieldNotExists, ItemNotFound)
-* IvalidConfig
+* InvalidConfig
 * RequiresOverride
 * Inited (AlreadyInited, NotInited)
 * Forbidden (ReadOnly, PropertyReadOnly, ContainerReadOnly, Pointless)
