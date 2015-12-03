@@ -1,3 +1,5 @@
+## dev-master
+
 ## 1.0.4 (13.11.2015)
 
 * InvalidFormat
