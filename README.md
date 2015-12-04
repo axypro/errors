@@ -9,6 +9,6 @@
 
 [Documentation](https://github.com/axypro/errors/blob/master/doc/README.md).
 
-PHP 5.4+
+Tested on PHP 5.4+, PHP 7, HHVM (on Linux).
 
 The library does not require any dependencies (except composer packages).
