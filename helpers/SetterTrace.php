@@ -8,6 +8,8 @@ namespace axy\errors\helpers;
 
 /**
  * Helper which sets a trace for an exception instance
+ *
+ * Since PHP 7 this feature is not supported
  */
 class SetterTrace
 {
@@ -16,11 +18,17 @@ class SetterTrace
      *
      * @param \Exception $e
      * @param array $trace
+     * @return bool
      */
     public static function setTrace(\Exception $e, array $trace)
     {
-        $setter = new self($e);
-        $setter($trace);
+        try {
+            $setter = new self($e);
+            $setter($trace);
+            return true;
+        } catch (\Exception $e) {
+            return false;
+        }
     }
 
     /**
