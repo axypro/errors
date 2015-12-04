@@ -1,5 +1,8 @@
 ## dev-master
 
+* Travis
+* Fix tests for PHP7 and native trace truncate
+
 ## 1.0.4 (13.11.2015)
 
 * InvalidFormat
@@ -27,7 +30,7 @@
 
 * Optional truncate native trace
 * Opts: Global options of the library
-* InvalidConfig::getErrmsg() is deprecated. Use getErrorMessage(). 
+* InvalidConfig::getErrmsg() is deprecated. Use getErrorMessage().
 * NotValid::getErrmsg() is deprecated. Use getErrorMessage().
 * Documentation in English
 

@@ -11,7 +11,7 @@ Default means the following scheme.
 All classes of the library exceptions contained in the namespace to one level below of the library.
 
 For example:
- 
+
  * Library `my/lib`
  * Root namespace `my\lib`
  * Namespace for exception classes: `my\lib\errors`
@@ -64,6 +64,8 @@ The property `$howTruncateTrace` explains how truncate the trace.
  * `array` - the parameters for [truncate](https://github.com/axypro/backtrace/blob/master/doc/truncate.md)
 
 ### `truncateNativeTrace`
+
+*Since PHP 7 this feature is not supported.*
 
 To the native trace (which returns by `getTrace()`) can not be accessed.
 But if you really want it, it is possible.

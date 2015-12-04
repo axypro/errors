@@ -129,6 +129,9 @@ class TraceTruncateTest extends \PHPUnit_Framework_TestCase
 
     public function testNativeTruncate()
     {
+        if (version_compare(PHP_VERSION, '7.0.0', '>=')) {
+            $this->markTestSkipped('Truncate native trace is not supported since PHP7');
+        }
         $obj = new Invalid(true);
         $e = null;
         try {

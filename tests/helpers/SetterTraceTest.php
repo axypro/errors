@@ -17,6 +17,9 @@ class SetterTraceTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetTrace()
     {
+        if (version_compare(PHP_VERSION, '7.0.0', '>=')) {
+            $this->markTestSkipped('Truncate native trace is not supported since PHP7');
+        }
         $e = new \LogicException();
         $originalTrace = $e->getTrace();
         $this->assertNotEmpty($originalTrace);

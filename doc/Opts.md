@@ -1,11 +1,13 @@
 # `Opts`: the global options
 
 The class `axy\errors\Opts` allows you to globally configure the follow options:
- 
+
  * `howTruncateTrace`
  * `truncateNativeTrace`
 
 [See for details](backtrace.md).
+
+*Since PHP 7 truncate native trace is not supported.*
 
 Setters:
 
@@ -16,7 +18,7 @@ Getters:
 
  * `Opts::getHowTruncateTrace():mixed`
  * `Opts::getTruncateNativeTrace():bool`
-  
+
 Global settings and static method it is usually bad.
 But since it does not affect the functionality, but only on debug information then it is acceptable.
 

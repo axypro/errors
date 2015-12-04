@@ -61,6 +61,9 @@ class OptsTest extends \PHPUnit_Framework_TestCase
      */
     public function testTruncateNativeTrace()
     {
+        if (version_compare(PHP_VERSION, '7.0.0', '>=')) {
+            $this->markTestSkipped('Truncate native trace is not supported since PHP7');
+        }
         Opts::setHowTruncateTrace('axy\errors\tests\tst');
         $fn = OptsHelper::getFile();
         Opts::setTruncateNativeTrace(false);
