@@ -2,6 +2,7 @@
 
 * Travis & Coveralls
 * Fix tests for PHP7 and native trace truncate
+* Refactoring README
 
 ## 1.0.4 (13.11.2015)
 

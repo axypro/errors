@@ -27,6 +27,7 @@ class SetterTrace
             $setter($trace);
             return true;
         } catch (\Exception $e) {
+            // PHP 7
             return false;
         }
     }
