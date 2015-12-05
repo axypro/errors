@@ -10,8 +10,6 @@ Helper for define exception classes.
  * GitHub: [axypro/errors](https://github.com/axypro/errors)
  * Composer: [axy/errors](https://packagist.org/packages/axy/errors)
 
-[Documentation](https://github.com/axypro/errors/blob/master/doc/README.md).
-
 Tested on PHP 5.4+, PHP 7, HHVM (on Linux).
 
 The library does not require any dependencies (except composer packages).
