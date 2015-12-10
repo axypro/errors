@@ -9,7 +9,7 @@ Helper for define exception classes (PHP).
 [![License](https://poser.pugx.org/axy/errors/license)](LICENSE)
 
 * The library does not require any dependencies (except composer packages).
-* Tested on PHP 5.4+, PHP 7, HHVM (on Linux).
+* Tested on PHP 5.4+, PHP 7, HHVM (on Linux), PHP 5.5 (on Windows).
 * Install: `composer require axy/errors`.
 * License: [MIT](LICENSE).
 
