@@ -17,7 +17,7 @@ use axy\errors\tests\tst\OptsHelper;
  */
 class OptsTest extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         if (!$this->opts) {
             $this->opts = (object)[
@@ -26,7 +26,7 @@ class OptsTest extends TestCase
         }
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         Opts::setHowTruncateTrace($this->opts->howTruncateTrace);
     }
@@ -35,7 +35,7 @@ class OptsTest extends TestCase
      * covers setHowTruncateTrace
      * covers getHowTruncateTrace
      */
-    public function testHowTruncateTrace()
+    public function testHowTruncateTrace(): void
     {
         Opts::setHowTruncateTrace(false);
         $this->assertSame(false, Opts::getHowTruncateTrace());

@@ -21,7 +21,7 @@ class MessageBuilderTest extends TestCase
     /**
      * covers ::createMessage
      */
-    public function testOriginalMessage()
+    public function testOriginalMessage(): void
     {
         $e = new CustomError('Original message', 4);
         $this->assertSame('Original message', $e->getMessage());
@@ -30,7 +30,7 @@ class MessageBuilderTest extends TestCase
     /**
      * covers ::createMessage
      */
-    public function testDefaultMessage()
+    public function testDefaultMessage(): void
     {
         $e = new CustomError();
         $this->assertSame('{{ a }} + {{ b }} = {{ code }}', $e->getMessage());
@@ -39,7 +39,7 @@ class MessageBuilderTest extends TestCase
     /**
      * covers ::createMessage
      */
-    public function testTemplateMessage()
+    public function testTemplateMessage(): void
     {
         $e = new CustomError(['a' => 2, 'b' => '2'], 4);
         $this->assertSame('2 + 2 = 4', $e->getMessage());
@@ -48,7 +48,7 @@ class MessageBuilderTest extends TestCase
     /**
      * covers ::createMessage
      */
-    public function testTemplateMessageEmptyVar()
+    public function testTemplateMessageEmptyVar(): void
     {
         $e = new CustomError([], 4);
         $this->assertSame(' +  = 4', $e->getMessage());
@@ -57,7 +57,7 @@ class MessageBuilderTest extends TestCase
     /**
      * covers ::createMessage
      */
-    public function testTemplateMessageReplaceCode()
+    public function testTemplateMessageReplaceCode(): void
     {
         $e = new CustomError(['a' => 2, 'b' => '2', 'code' => 5], 4);
         $this->assertSame('2 + 2 = 5', $e->getMessage());
@@ -66,7 +66,7 @@ class MessageBuilderTest extends TestCase
     /**
      * covers ::createMessage
      */
-    public function testObjectToString()
+    public function testObjectToString(): void
     {
         try {
             $container = new Container(3);

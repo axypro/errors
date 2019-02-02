@@ -9,6 +9,7 @@ namespace axy\errors\tests;
 
 use PHPUnit\Framework\TestCase;
 use axy\errors\InvalidConfig;
+use RuntimeException;
 
 /**
  * coversDefaultClass axy\errors\InvalidConfig
@@ -20,9 +21,9 @@ class InvalidConfigTest extends TestCase
      * covers ::getConfigName
      * covers ::getErrmsg
      */
-    public function testCreate()
+    public function testCreate(): void
     {
-        $previous = new \RuntimeException('msg');
+        $previous = new RuntimeException('msg');
         $e = new InvalidConfig('MyConfig', 'oh, error', 2, $previous);
         $this->assertSame('MyConfig', $e->getConfigName());
         $this->assertSame('oh, error', $e->getErrorMessage());

@@ -9,6 +9,7 @@ namespace axy\errors\tests;
 
 use PHPUnit\Framework\TestCase;
 use axy\errors\Pointless;
+use RuntimeException;
 
 /**
  * coversDefaultClass axy\errors\Pointless
@@ -18,9 +19,9 @@ class PointlessTest extends TestCase
     /**
      * covers ::__construct
      */
-    public function testCreate()
+    public function testCreate(): void
     {
-        $previous = new \RuntimeException('msg');
+        $previous = new RuntimeException('msg');
         $e = new Pointless('Oh', 0, $previous);
         $this->assertInstanceOf('Exception', $e);
         $this->assertInstanceOf('LogicException', $e);

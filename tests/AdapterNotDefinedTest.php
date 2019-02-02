@@ -9,6 +9,7 @@ namespace axy\errors\tests;
 
 use PHPUnit\Framework\TestCase;
 use axy\errors\AdapterNotDefined;
+use RuntimeException;
 
 /**
  * coversDefaultClass axy\errors\AdapterNotDefined
@@ -20,9 +21,9 @@ class AdapterNotDefinedTest extends TestCase
      * covers ::getAdapter
      * covers ::getService
      */
-    public function testCreate()
+    public function testCreate(): void
     {
-        $ep = new \RuntimeException('msg');
+        $ep = new RuntimeException('msg');
         $e = new AdapterNotDefined('sqlMy', 'DB', $ep);
         $this->assertSame('Adapter "sqlMy" is not defined for "DB"', $e->getMessage());
         $this->assertSame('sqlMy', $e->getAdapter());

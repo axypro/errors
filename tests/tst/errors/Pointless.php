@@ -7,7 +7,9 @@ declare(strict_types=1);
 
 namespace axy\errors\tests\tst\errors;
 
-class Pointless extends \axy\errors\Pointless implements Error
+use axy\errors\Pointless as StandardPointless;
+
+class Pointless extends StandardPointless implements Error
 {
     /** {@inheritdoc} */
     protected $howTruncateTrace = false;

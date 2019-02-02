@@ -7,6 +7,8 @@ declare(strict_types=1);
 
 namespace axy\errors\tests\tst;
 
+use axy\errors\InvalidConfig;
+
 class ContextTruncated
 {
     /**
@@ -15,7 +17,7 @@ class ContextTruncated
     public $line;
 
     /**
-     * @var \axy\errors\tests\tst\Invalid
+     * @var Invalid
      */
     public $obj;
 
@@ -25,7 +27,7 @@ class ContextTruncated
     public $file;
 
     /**
-     * @var \axy\errors\InvalidConfig
+     * @var InvalidConfig
      */
     public $e;
 }

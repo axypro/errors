@@ -13,16 +13,16 @@ class Thrower
 {
     /**
      * @param string $ns
-     * @throws \axy\errors\tests\tst\errors\InvalidConfig
+     * @throws InvalidConfig
      */
-    public function run($ns)
+    public function run($ns): void
     {
         $this->raise($ns);
     }
 
     /**
      * @param string $ns
-     * @throws \axy\errors\tests\tst\errors\InvalidConfig
+     * @throws InvalidConfig
      */
     private function raise($ns)
     {

@@ -9,6 +9,7 @@ namespace axy\errors\tests;
 
 use PHPUnit\Framework\TestCase;
 use axy\errors\Disabled;
+use RuntimeException;
 
 /**
  * coversDefaultClass axy\errors\Disabled
@@ -18,9 +19,9 @@ class DisabledTest extends TestCase
     /**
      * covers ::__construct
      */
-    public function testCreate()
+    public function testCreate(): void
     {
-        $previous = new \RuntimeException('msg');
+        $previous = new RuntimeException('msg');
         $e = new Disabled('Srv', $previous);
         $this->assertInstanceOf('Exception', $e);
         $this->assertInstanceOf('LogicException', $e);

@@ -9,6 +9,7 @@ namespace axy\errors\tests;
 
 use PHPUnit\Framework\TestCase;
 use axy\errors\NotInstalled;
+use RuntimeException;
 
 /**
  * coversDefaultClass axy\errors\NotInstalled
@@ -20,9 +21,9 @@ class NotInstalledTest extends TestCase
      * covers ::getDependency
      * covers ::getAction
      */
-    public function testCreate()
+    public function testCreate(): void
     {
-        $previous = new \RuntimeException('msg');
+        $previous = new RuntimeException('msg');
         $e = new NotInstalled('mbstring', 'unicode string', $previous);
         $this->assertSame('mbstring', $e->getDependency());
         $this->assertSame('unicode string', $e->getAction());

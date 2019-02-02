@@ -9,6 +9,7 @@ namespace axy\errors\tests;
 
 use PHPUnit\Framework\TestCase;
 use axy\errors\NotValid;
+use RuntimeException;
 
 /**
  * coversDefaultClass axy\errors\NotValid
@@ -20,9 +21,9 @@ class NotValidTest extends TestCase
      * covers ::getVarname
      * covers ::getErrmsg
      */
-    public function testCreate()
+    public function testCreate(): void
     {
-        $previous = new \RuntimeException('msg');
+        $previous = new RuntimeException('msg');
         $e = new NotValid('email', 'is empty', $previous);
         $this->assertSame('email', $e->getVarName());
         $this->assertSame('is empty', $e->getErrorMessage());

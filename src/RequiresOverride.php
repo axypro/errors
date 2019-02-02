@@ -25,7 +25,7 @@ class RequiresOverride extends Logic implements Error
     /**
      * Constructor
      *
-     * @param string|boolean $method [optional]
+     * @param string|bool $method [optional]
      *        the method name (if TRUE - method where the exception was thrown)
      * @param Exception $previous [optional]
      * @param mixed $thrower [optional]

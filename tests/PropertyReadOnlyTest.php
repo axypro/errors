@@ -9,6 +9,7 @@ namespace axy\errors\tests;
 
 use PHPUnit\Framework\TestCase;
 use axy\errors\PropertyReadOnly;
+use RuntimeException;
 
 /**
  * coversDefaultClass axy\errors\PropertyReadOnly
@@ -20,9 +21,9 @@ class PropertyReadOnlyTest extends TestCase
      * covers ::getContainer
      * covers ::getKey
      */
-    public function testCreate()
+    public function testCreate(): void
     {
-        $previous = new \RuntimeException('msg');
+        $previous = new RuntimeException('msg');
         $e = new PropertyReadOnly('Cont', 'prop', $previous);
         $this->assertInstanceOf('Exception', $e);
         $this->assertInstanceOf('LogicException', $e);

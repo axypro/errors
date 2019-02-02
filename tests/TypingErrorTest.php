@@ -9,6 +9,7 @@ namespace axy\errors\tests;
 
 use PHPUnit\Framework\TestCase;
 use axy\errors\TypingError;
+use RuntimeException;
 
 /**
  * coversDefaultClass axy\errors\TypingError
@@ -20,9 +21,9 @@ class TypingErrorTest extends TestCase
      * covers ::getVarname
      * covers ::getExpected
      */
-    public function testNormal()
+    public function testNormal(): void
     {
-        $previous = new \RuntimeException('msg');
+        $previous = new RuntimeException('msg');
         $e = new TypingError('var', 'array', $previous);
         $this->assertSame('var', $e->getVarname());
         $this->assertSame(['array'], $e->getExpected());
@@ -35,7 +36,7 @@ class TypingErrorTest extends TestCase
      * covers ::getVarname
      * covers ::getExpected
      */
-    public function testExpectedArray()
+    public function testExpectedArray(): void
     {
         $e = new TypingError('arg', ['MyClass', 'array', 'string']);
         $this->assertSame('arg', $e->getVarname());
@@ -48,7 +49,7 @@ class TypingErrorTest extends TestCase
      * covers ::getVarname
      * covers ::getExpected
      */
-    public function testExpectedArraySingle()
+    public function testExpectedArraySingle(): void
     {
         $e = new TypingError('arg', ['MyClass']);
         $this->assertSame('arg', $e->getVarname());
@@ -61,7 +62,7 @@ class TypingErrorTest extends TestCase
      * covers ::getVarname
      * covers ::getExpected
      */
-    public function testExpectedArrayEmpty()
+    public function testExpectedArrayEmpty(): void
     {
         $e = new TypingError('arg', []);
         $this->assertSame('arg', $e->getVarname());
@@ -75,7 +76,7 @@ class TypingErrorTest extends TestCase
      * covers ::getVarname
      * covers ::getExpected
      */
-    public function testDefault()
+    public function testDefault(): void
     {
         $e = new TypingError();
         $this->assertNull($e->getVarname());

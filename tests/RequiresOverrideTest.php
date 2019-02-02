@@ -9,6 +9,7 @@ namespace axy\errors\tests;
 
 use PHPUnit\Framework\TestCase;
 use axy\errors\RequiresOverride;
+use RuntimeException;
 
 /**
  * coversDefaultClass axy\errors\RequiresOverride
@@ -19,9 +20,9 @@ class RequiresOverrideTest extends TestCase
      * covers ::__construct
      * covers ::getMethod
      */
-    public function testCreate()
+    public function testCreate(): void
     {
-        $previous = new \RuntimeException('msg');
+        $previous = new RuntimeException('msg');
         $e = new RequiresOverride('MyClass::myMethod', $previous);
         $this->assertSame('MyClass::myMethod', $e->getMethod());
         $this->assertSame($previous, $e->getPrevious());
@@ -32,7 +33,7 @@ class RequiresOverrideTest extends TestCase
      * covers ::__construct
      * covers ::getMethod
      */
-    public function testCreateBacktrace()
+    public function testCreateBacktrace(): void
     {
         $e = null;
         try {
@@ -47,7 +48,7 @@ class RequiresOverrideTest extends TestCase
     /**
      * @throws \axy\errors\RequiresOverride
      */
-    private function methodToOverride()
+    private function methodToOverride(): void
     {
         throw new RequiresOverride();
     }

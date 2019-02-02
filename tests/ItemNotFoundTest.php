@@ -21,7 +21,7 @@ class ItemNotFoundTest extends TestCase
      * covers ::getKey
      * covers ::getContainer
      */
-    public function testCreate()
+    public function testCreate(): void
     {
         $container = new Container(5);
         $e = null;

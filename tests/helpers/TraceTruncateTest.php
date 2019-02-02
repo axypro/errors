@@ -9,12 +9,15 @@ namespace axy\errors\tests\helpers;
 
 use PHPUnit\Framework\TestCase;
 use axy\errors\InvalidConfig;
-use axy\errors\tests\tst\errors\InvalidConfig as CustomInvalidConfig;
-use axy\errors\tests\tst\errors\Pointless;
-use axy\errors\tests\tst\errors\Truncated;
-use axy\errors\tests\tst\Invalid;
-use axy\errors\tests\tst\Container;
-use axy\errors\tests\tst\ContextTruncated;
+use axy\errors\tests\tst\errors\{
+    InvalidConfig as CustomInvalidConfig,
+    Pointless
+};
+use axy\errors\tests\tst\{
+    Invalid,
+    Container,
+    ContextTruncated
+};
 
 /**
  * coversDefaultClass axy\errors\helpers\TraceTruncate
@@ -24,10 +27,10 @@ class TraceTruncateTest extends TestCase
     /**
      * test*() methods invoked via Reflection (has not key "file")
      *
-     * @param boolean $inherit
-     * @return \axy\errors\tests\tst\ContextTruncated
+     * @param bool $inherit
+     * @return ContextTruncated
      */
-    private function getErrorContext($inherit)
+    private function getErrorContext(bool $inherit): ContextTruncated
     {
         $obj = new Invalid($inherit);
         $line = null;
@@ -46,7 +49,7 @@ class TraceTruncateTest extends TestCase
         return $context;
     }
 
-    public function testCustomNS()
+    public function testCustomNS(): void
     {
         $context = $this->getErrorContext(true);
         $e = $context->e;
@@ -73,7 +76,7 @@ class TraceTruncateTest extends TestCase
         $this->assertSame(2, count($e->getTrace()) - count($trace));
     }
 
-    public function testAxyNS()
+    public function testAxyNS(): void
     {
         $context = $this->getErrorContext(false);
         $e = $context->e;
@@ -95,7 +98,7 @@ class TraceTruncateTest extends TestCase
         $this->assertSame($context->obj->file, $trace->items[0]['file']);
     }
 
-    public function testOutNS()
+    public function testOutNS(): void
     {
         $line = null;
         try {
@@ -117,7 +120,7 @@ class TraceTruncateTest extends TestCase
         $this->assertEquals($e->getTrace(), $trace->originalItems);
     }
 
-    public function testNotTruncate()
+    public function testNotTruncate(): void
     {
         $obj = new Invalid(true);
         $e = null;
@@ -130,7 +133,7 @@ class TraceTruncateTest extends TestCase
         $this->assertSame($obj->line, $e->getLine());
     }
 
-    public function testThrowerNull()
+    public function testThrowerNull(): void
     {
         $line = null;
         $e = null;
@@ -144,7 +147,7 @@ class TraceTruncateTest extends TestCase
         $this->assertSame($line, $e->getLine());
     }
 
-    public function testThrowerThis()
+    public function testThrowerThis(): void
     {
         $e = null;
         try {
@@ -156,7 +159,7 @@ class TraceTruncateTest extends TestCase
         $this->assertSame(Container::$line, $e->getLine());
     }
 
-    public function testThrowerNS()
+    public function testThrowerNS(): void
     {
         $line = null;
         $e = null;

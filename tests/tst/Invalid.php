@@ -24,9 +24,9 @@ class Invalid
     public $line;
 
     /**
-     * @param boolean $inherit
+     * @param bool $inherit
      */
-    public function __construct($inherit)
+    public function __construct(bool $inherit)
     {
         $this->inherit = $inherit;
     }
@@ -35,7 +35,7 @@ class Invalid
      * @param int $x
      * @throws InvalidConfig
      */
-    public function begin($x)
+    public function begin(int $x): void
     {
         $this->cont($x, 2);
     }
@@ -43,7 +43,7 @@ class Invalid
     /**
      * @throws Pointless
      */
-    public function pointless()
+    public function pointless(): void
     {
         $this->file = __FILE__;
         $this->line = __LINE__ + 1;
@@ -53,7 +53,7 @@ class Invalid
     /**
      * @throws Truncated
      */
-    public function truncated()
+    public function truncated(): void
     {
         $this->throwTruncated();
     }
@@ -63,13 +63,13 @@ class Invalid
      * @param int $y
      * @throws InvalidConfig
      */
-    private function cont($x, $y)
+    private function cont(int $x, int $y): void
     {
         /** @noinspection PhpMethodParametersCountMismatchInspection */
         $this->finish($x + $y);
     }
 
-    private function throwTruncated()
+    private function throwTruncated(): void
     {
         throw new Truncated('truncated');
     }
@@ -77,7 +77,7 @@ class Invalid
     /**
      * @throws InvalidConfig
      */
-    private function finish()
+    private function finish(): void
     {
         $this->file = __FILE__;
         if ($this->inherit) {
@@ -90,7 +90,7 @@ class Invalid
     }
 
     /**
-     * @var boolean
+     * @var bool
      */
     private $inherit;
 }

@@ -14,7 +14,7 @@ class OptsHelper
     /**
      * @return string
      */
-    public static function getFile()
+    public static function getFile(): string
     {
         return __FILE__;
     }
@@ -22,12 +22,12 @@ class OptsHelper
     /**
      * @throws \axy\errors\ItemNotFound
      */
-    public static function error()
+    public static function error(): void
     {
         self::throwError();
     }
 
-    private static function throwError()
+    private static function throwError(): void
     {
         throw new ItemNotFound;
     }

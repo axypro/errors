@@ -9,6 +9,7 @@ namespace axy\errors\tests;
 
 use PHPUnit\Framework\TestCase;
 use axy\errors\ContainerReadOnly;
+use RuntimeException;
 
 /**
  * coversDefaultClass axy\errors\ContainerReadOnly
@@ -19,9 +20,9 @@ class ContainerReadOnlyTest extends TestCase
      * covers ::__construct
      * covers ::getContainer
      */
-    public function testCreate()
+    public function testCreate(): void
     {
-        $previous = new \RuntimeException('msg');
+        $previous = new RuntimeException('msg');
         $e = new ContainerReadOnly('Cont', $previous);
         $this->assertInstanceOf('Exception', $e);
         $this->assertInstanceOf('LogicException', $e);

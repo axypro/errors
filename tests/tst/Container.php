@@ -9,13 +9,14 @@ namespace axy\errors\tests\tst;
 
 use axy\errors\FieldNotExist;
 use axy\errors\ItemNotFound;
+use axy\errors\tests\tst\errors\InvalidConfig;
 
 class Container
 {
     /**
      * @param int $num
      */
-    public function __construct($num)
+    public function __construct(int $num)
     {
         $this->num = $num;
     }
@@ -24,7 +25,7 @@ class Container
      * @param string $key
      * @throws ItemNotFound
      */
-    public function getUndefinedItem($key)
+    public function getUndefinedItem(string $key)
     {
         throw new ItemNotFound($key, $this);
     }
@@ -33,7 +34,7 @@ class Container
      * @param string $key
      * @throws FieldNotExist
      */
-    public function getUnknownField($key)
+    public function getUnknownField(string $key)
     {
         throw new FieldNotExist($key, $this);
     }
@@ -48,7 +49,7 @@ class Container
 
     /**
      * @param mixed $ns
-     * @throws \axy\errors\tests\tst\errors\InvalidConfig
+     * @throws InvalidConfig
      */
     public static function thrower($ns)
     {
@@ -58,8 +59,14 @@ class Container
         $t->run($ns);
     }
 
+    /**
+     * @var string
+     */
     public static $file;
 
+    /**
+     * @var int
+     */
     public static $line;
 
     /**

@@ -7,6 +7,8 @@ declare(strict_types=1);
 
 namespace axy\errors\tests\tst\errors;
 
-class InvalidConfig extends \axy\errors\InvalidConfig implements Error
+use axy\errors\InvalidConfig as StandardInvalidConfig;
+
+class InvalidConfig extends StandardInvalidConfig implements Error
 {
 }

@@ -21,7 +21,7 @@ class FieldNotExistTest extends TestCase
      * covers ::getKey
      * covers ::getContainer
      */
-    public function testCreate()
+    public function testCreate(): void
     {
         $container = new Container(7);
         $e = null;
