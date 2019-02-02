@@ -15,6 +15,10 @@ use axy\errors\Opts;
  * Truncate the exception trace
  *
  * @link https://github.com/axypro/errors/blob/master/doc/backtrace.md documentation
+ *
+ * Properties are defined for suppress PhpStorm inspection (@noinpection don't work)
+ * @property string $file
+ * @property int $line
  */
 trait TraceTruncate
 {
