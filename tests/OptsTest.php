@@ -21,7 +21,6 @@ class OptsTest extends \PHPUnit_Framework_TestCase
         if (!$this->opts) {
             $this->opts = (object)[
                 'howTruncateTrace' => Opts::getHowTruncateTrace(),
-                'truncateTrace' => Opts::getTruncateNativeTrace(),
             ];
         }
     }
@@ -29,7 +28,6 @@ class OptsTest extends \PHPUnit_Framework_TestCase
     public function tearDown()
     {
         Opts::setHowTruncateTrace($this->opts->howTruncateTrace);
-        Opts::setTruncateNativeTrace($this->opts->truncateTrace);
     }
 
     /**
@@ -55,38 +53,6 @@ class OptsTest extends \PHPUnit_Framework_TestCase
         } catch (ItemNotFound $e) {
         }
         $this->assertSame(__FILE__, $e->getFile());
-    }
-
-    /**
-     * covers setTruncateNativeTrace
-     * covers getTruncateNativeTrace
-     */
-    public function testTruncateNativeTrace()
-    {
-        if (version_compare(PHP_VERSION, '7.0.0', '>=')) {
-            $this->markTestSkipped('Truncate native trace is not supported since PHP7');
-        }
-        Opts::setHowTruncateTrace('axy\errors\tests\tst');
-        $fn = OptsHelper::getFile();
-        Opts::setTruncateNativeTrace(false);
-        $this->assertSame(false, Opts::getTruncateNativeTrace());
-        $e = null;
-        try {
-            OptsHelper::error();
-        } catch (ItemNotFound $e) {
-        }
-        $originalTrace = $e->getTrace();
-        $this->assertSame($fn, $originalTrace[0]['file']);
-        $this->assertEquals(1, count($originalTrace) - count($e->getTruncatedTrace()->items));
-        Opts::setTruncateNativeTrace(true);
-        $this->assertSame(true, Opts::getTruncateNativeTrace());
-        try {
-            OptsHelper::error();
-        } catch (ItemNotFound $e) {
-        }
-        $originalTrace = $e->getTrace();
-        $this->assertEquals(count($originalTrace), count($e->getTruncatedTrace()->items));
-        $this->assertSame(__FILE__, $originalTrace[0]['file']);
     }
 
     /**

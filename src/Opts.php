@@ -32,28 +32,7 @@ class Opts
     }
 
     /**
-     * @param mixed $value
-     */
-    public static function setTruncateNativeTrace($value): void
-    {
-        self::$truncateNativeTrace = $value;
-    }
-
-    /**
-     * @return mixed
-     */
-    public static function getTruncateNativeTrace(): bool
-    {
-        return self::$truncateNativeTrace;
-    }
-
-    /**
      * @var mixed
      */
     private static $howTruncateTrace = true;
-
-    /**
-     * @var bool
-     */
-    private static $truncateNativeTrace = false;
 }

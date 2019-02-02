@@ -129,26 +129,6 @@ class TraceTruncateTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($obj->line, $e->getLine());
     }
 
-    public function testNativeTruncate()
-    {
-        if (version_compare(PHP_VERSION, '7.0.0', '>=')) {
-            $this->markTestSkipped('Truncate native trace is not supported since PHP7');
-        }
-        $obj = new Invalid(true);
-        $e = null;
-        try {
-            $obj->truncated();
-            $this->fail('not thrown');
-        } catch (Truncated $e) {
-        }
-        $originalTrace = $e->getTrace();
-        $truncatedTrace = $e->getTruncatedTrace()->items;
-        $this->assertNotEmpty($originalTrace);
-        $this->assertEquals(count($originalTrace), count($truncatedTrace));
-        $this->assertEquals($originalTrace[0], $truncatedTrace[0]);
-        $this->assertEquals(__FILE__, $originalTrace[0]['file']);
-    }
-
     public function testThrowerNull()
     {
         $line = null;

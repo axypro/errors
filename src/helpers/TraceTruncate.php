@@ -35,13 +35,6 @@ trait TraceTruncate
     protected $howTruncateTrace = null;
 
     /**
-     * Do truncate the native trace?
-     *
-     * @var null
-     */
-    protected $truncateNativeTrace = null;
-
-    /**
      * Returns the filename of the original exception point
      *
      * @return string
@@ -90,14 +83,6 @@ trait TraceTruncate
         $this->file = $this->truncatedTrace->file;
         /** @noinspection PhpUndefinedFieldInspection */
         $this->line = $this->truncatedTrace->line;
-        $truncateNativeTrace = $this->truncateNativeTrace;
-        if ($truncateNativeTrace === null) {
-            $truncateNativeTrace = Opts::getTruncateNativeTrace();
-        }
-        if ($truncateNativeTrace) {
-            /** @noinspection PhpParamsInspection */
-            SetterTrace::setTrace($this, $this->truncatedTrace->items);
-        }
     }
 
     /**
