@@ -8,8 +8,10 @@
  * @link https://github.com/axypro/errors repository
  * @link https://github.com/axypro/errors/blob/master/README.md documentation
  * @link https://packagist.org/packages/axy/errors composer
- * @uses PHP5.4+
+ * @uses PHP7.1+
  */
+
+declare(strict_types=1);
 
 namespace axy\errors;
 

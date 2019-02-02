@@ -1,6 +1,6 @@
 ### dev-master
 
-* Use PHP 7.1
+* Use PHP 7.1 (strict types)
 * Move classes to `src` dir
 
 ### 1.0.5 (02.02.2019)
