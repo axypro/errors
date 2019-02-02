@@ -1,3 +1,7 @@
+### dev-master
+
+* Move classes to `src` dir
+
 ### 1.0.5 (02.02.2019)
 
 * Travis & Coveralls

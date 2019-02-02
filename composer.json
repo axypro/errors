@@ -20,7 +20,8 @@
     },
     "autoload": {
         "psr-4": {
-            "axy\\errors\\": ""
+            "axy\\errors\\": "src",
+            "axy\\errors\\tests\\": "tests"
         }
     },
     "archive": {
