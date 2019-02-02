@@ -1,10 +1,13 @@
-### dev-master
+### 2.0.0 (02.02.2019)
 
 * Use PHP 7.1 (type hinting, strict types and etc)
 * Move classes to `src` dir
 * Remove native truncate stack feature (don't supported for PHP 7)
 * Use phpunit 7.5
 * Install dev-tools (phpunit, phpcs, phpmd) locally
+
+
+## Version 1.x, Support PHP 5.4, branch `php5`
 
 ### 1.0.5 (02.02.2019)
 
