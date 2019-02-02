@@ -18,7 +18,7 @@ class Opts
     /**
      * @param mixed $value
      */
-    public static function setHowTruncateTrace($value)
+    public static function setHowTruncateTrace($value): void
     {
         self::$howTruncateTrace = $value;
     }
@@ -34,7 +34,7 @@ class Opts
     /**
      * @param mixed $value
      */
-    public static function setTruncateNativeTrace($value)
+    public static function setTruncateNativeTrace($value): void
     {
         self::$truncateNativeTrace = $value;
     }
@@ -42,7 +42,7 @@ class Opts
     /**
      * @return mixed
      */
-    public static function getTruncateNativeTrace()
+    public static function getTruncateNativeTrace(): bool
     {
         return self::$truncateNativeTrace;
     }

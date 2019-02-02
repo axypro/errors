@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace axy\errors;
 
+use Exception;
+
 /**
  * Invalid format of some string
  */
@@ -28,11 +30,15 @@ class InvalidFormat extends Logic
      *
      * @param string $value [optional]
      * @param string $type [optional]
-     * @param \Exception $previous [optional]
+     * @param Exception $previous [optional]
      * @param mixed $thrower [optional]
      */
-    public function __construct($value = null, $type = null, \Exception $previous = null, $thrower = null)
-    {
+    public function __construct(
+        ?string $value = null,
+        ?string $type = null,
+        Exception $previous = null,
+        $thrower = null
+    ) {
         $this->value = $value;
         $this->type = $type;
         $message= [
@@ -45,7 +51,7 @@ class InvalidFormat extends Logic
     /**
      * @return string
      */
-    final public function getValue()
+    final public function getValue(): ?string
     {
         return $this->value;
     }
@@ -53,7 +59,7 @@ class InvalidFormat extends Logic
     /**
      * @return string
      */
-    final public function getType()
+    final public function getType(): ?string
     {
         return $this->type;
     }

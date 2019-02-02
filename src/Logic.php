@@ -3,11 +3,13 @@
  * @package axy\errors
  * @author Oleg Grigoriev <go.vasac@gmail.com>
  */
+/* @noinspection PhpMissingParentConstructorInspection */
 
 declare(strict_types=1);
 
 namespace axy\errors;
 
+use Exception;
 use axy\errors\helpers\ErrorTrait;
 
 /**
@@ -32,7 +34,7 @@ class Logic extends \LogicException implements Error
      * @param mixed $thrower [optional]
      *        one who has thrown exception (an object or a namespace)
      */
-    public function __construct($message = null, $code = 0, \Exception $previous = null, $thrower = null)
+    public function __construct($message = null, int $code = 0, Exception $previous = null, $thrower = null)
     {
         $this->callErrorTrait($message, $code, $previous, $thrower);
     }

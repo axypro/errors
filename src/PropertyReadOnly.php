@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace axy\errors;
 
+use Exception;
+
 /**
  * This property is read-only
  *
@@ -25,10 +27,10 @@ class PropertyReadOnly extends Logic implements ReadOnly
      *
      * @param object|string $container [optional]
      * @param string $key [optional]
-     * @param \Exception $previous [optional]
+     * @param Exception $previous [optional]
      * @param mixed $thrower [optional]
      */
-    public function __construct($container = null, $key = null, \Exception $previous = null, $thrower = null)
+    public function __construct($container = null, ?string $key = null, Exception $previous = null, $thrower = null)
     {
         $this->container = $container;
         $this->key = $key;
@@ -50,7 +52,7 @@ class PropertyReadOnly extends Logic implements ReadOnly
     /**
      * @return string
      */
-    final public function getKey()
+    final public function getKey(): ?string
     {
         return $this->key;
     }

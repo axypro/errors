@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace axy\errors;
 
+use Exception;
+
 /**
  * Attempt to re-initialize an object
  *
@@ -25,10 +27,10 @@ class AlreadyInited extends Logic implements Init
      *
      * @param object|string $object [optional]
      *        the object or its name
-     * @param \Exception $previous [optional]
+     * @param Exception $previous [optional]
      * @param mixed $thrower [optional]
      */
-    public function __construct($object = null, \Exception $previous = null, $thrower = null)
+    public function __construct($object = null, Exception $previous = null, $thrower = null)
     {
         $this->object = $object;
         $message = [

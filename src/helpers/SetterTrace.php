@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace axy\errors\helpers;
 
+use Exception;
+
 /**
  * Helper which sets a trace for an exception instance
  *
@@ -18,11 +20,11 @@ class SetterTrace
     /**
      * Sets a trace for an exception
      *
-     * @param \Exception $e
+     * @param Exception $e
      * @param array $trace
      * @return bool
      */
-    public static function setTrace(\Exception $e, array $trace)
+    public static function setTrace(Exception $e, array $trace): bool
     {
         try {
             $setter = new self($e);
@@ -37,9 +39,9 @@ class SetterTrace
     /**
      * The constructor
      *
-     * @param \Exception $e
+     * @param Exception $e
      */
-    public function __construct(\Exception $e)
+    public function __construct(Exception $e)
     {
         $this->set = function ($trace) {
             /** @noinspection PhpUndefinedFieldInspection */

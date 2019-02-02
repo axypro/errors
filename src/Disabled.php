@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace axy\errors;
 
+use Exception;
+
 /**
  * This service is disabled in the current environment
  *
@@ -25,10 +27,10 @@ class Disabled extends Logic implements Forbidden
      *
      * @param object|string $service [optional]
      *        the service or its name
-     * @param \Exception $previous
+     * @param Exception $previous
      * @param object $thrower [optional]
      */
-    public function __construct($service = null, \Exception $previous = null, $thrower = null)
+    public function __construct($service = null, Exception $previous = null, $thrower = null)
     {
         $this->service = $service;
         $message = [

@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace axy\errors;
 
+use Exception;
+
 /**
  * An adapter is not defined for this service
  *
@@ -25,10 +27,10 @@ class AdapterNotDefined extends Logic implements NotFound
      *
      * @param string $adapter [optional]
      * @param object|string $service [optional]
-     * @param \Exception $previous [optional]
+     * @param Exception $previous [optional]
      * @param mixed $thrower [optional]
      */
-    public function __construct($adapter = null, $service = null, \Exception $previous = null, $thrower = null)
+    public function __construct(?string $adapter = null, $service = null, Exception $previous = null, $thrower = null)
     {
         $this->adapter = $adapter;
         $this->service = $service;
@@ -42,7 +44,7 @@ class AdapterNotDefined extends Logic implements NotFound
     /**
      * @return string
      */
-    final public function getAdapter()
+    final public function getAdapter(): string
     {
         return $this->adapter;
     }

@@ -29,7 +29,7 @@ class TypingError extends Logic implements InvalidValue
      * @param \Exception $previous [optional]
      * @param mixed $thrower [optional]
      */
-    public function __construct($varName = null, $expected = null, \Exception $previous = null, $thrower = null)
+    public function __construct(?string $varName = null, $expected = null, \Exception $previous = null, $thrower = null)
     {
         $this->varName = $varName;
         if (is_array($expected)) {
@@ -60,7 +60,7 @@ class TypingError extends Logic implements InvalidValue
     /**
      * @return string
      */
-    public function getVarName()
+    public function getVarName(): ?string
     {
         return $this->varName;
     }

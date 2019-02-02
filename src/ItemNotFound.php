@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace axy\errors;
 
+use Exception;
+
 /**
  * An item was not found in a variable container at the current moment
  *
@@ -25,10 +27,10 @@ class ItemNotFound extends Runtime implements NotFound
      *
      * @param string $key [optional]
      * @param object|string $container [optional]
-     * @param \Exception $previous [optional]
+     * @param Exception $previous [optional]
      * @param mixed $thrower [optional]
      */
-    public function __construct($key = null, $container = null, \Exception $previous = null, $thrower = null)
+    public function __construct(?string $key = null, $container = null, Exception $previous = null, $thrower = null)
     {
         $this->key = $key;
         $this->container = $container;
@@ -42,7 +44,7 @@ class ItemNotFound extends Runtime implements NotFound
     /**
      * @return string
      */
-    final public function getKey()
+    final public function getKey(): ?string
     {
         return $this->key;
     }

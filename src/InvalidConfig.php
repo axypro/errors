@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace axy\errors;
 
+use Exception;
+
 /**
  * A configuration has an invalid format
  *
@@ -30,23 +32,28 @@ class InvalidConfig extends Logic
      * @param int $code [optional]
      *        the error code
      * @param \Exception $p [optional]
-     * @param mixed $t [optional]
+     * @param mixed $thrower [optional]
      */
-    public function __construct($configName = null, $errorMessage = null, $code = 0, \Exception $p = null, $t = null)
-    {
+    public function __construct(
+        ?string $configName = null,
+        ?string $errorMessage = null,
+        int $code = 0,
+        Exception $p = null,
+        $thrower = null
+    ) {
         $this->configName = $configName;
         $this->errorMessage = $errorMessage;
         $message = [
             'configName' => $configName,
             'errorMessage' => $errorMessage,
         ];
-        parent::__construct($message, $code, $p, $t);
+        parent::__construct($message, $code, $p, $thrower);
     }
 
     /**
      * @return string
      */
-    final public function getConfigName()
+    final public function getConfigName(): ?string
     {
         return $this->configName;
     }
@@ -54,7 +61,7 @@ class InvalidConfig extends Logic
     /**
      * @return string
      */
-    final public function getErrorMessage()
+    final public function getErrorMessage(): ?string
     {
         return $this->errorMessage;
     }

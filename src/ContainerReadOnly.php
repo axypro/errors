@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace axy\errors;
 
+use Exception;
+
 /**
  * This container is read-only
  *
@@ -25,10 +27,10 @@ class ContainerReadOnly extends Logic implements ReadOnly
      *
      * @param object|string $container [optional]
      *        the container or its name
-     * @param \Exception $previous [optional]
+     * @param Exception $previous [optional]
      * @param mixed $thrower [optional]
      */
-    public function __construct($container = null, \Exception $previous = null, $thrower = null)
+    public function __construct($container = null, Exception $previous = null, $thrower = null)
     {
         $this->container = $container;
         $message = [

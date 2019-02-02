@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace axy\errors;
 
+use Exception;
+
 /**
  * An object is not initialized
  *
@@ -24,10 +26,10 @@ class NotInited extends Logic implements Init
      * The constructor
      *
      * @param object|string $object [optional]
-     * @param \Exception $previous [optional]
+     * @param Exception $previous [optional]
      * @param mixed $thrower [optional]
      */
-    public function __construct($object = null, \Exception $previous = null, $thrower = null)
+    public function __construct($object = null, Exception $previous = null, $thrower = null)
     {
         $this->object = $object;
         $message = [

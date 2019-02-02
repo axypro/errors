@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace axy\errors;
 
+use Exception;
+
 /**
  * A dependency is not installed
  *
@@ -25,11 +27,15 @@ class NotInstalled extends Logic implements DependencyError
      *
      * @param string $dependency [optional]
      * @param string $action [optional]
-     * @param \Exception $previous [optional]
+     * @param Exception $previous [optional]
      * @param mixed $thrower [optional]
      */
-    public function __construct($dependency = null, $action = null, \Exception $previous = null, $thrower = null)
-    {
+    public function __construct(
+        string $dependency = null,
+        string $action = null,
+        Exception $previous = null,
+        $thrower = null
+    ) {
         $this->dependency = $dependency;
         $this->action = $action;
         $message = [
@@ -42,7 +48,7 @@ class NotInstalled extends Logic implements DependencyError
     /**
      * @return string
      */
-    final public function getDependency()
+    final public function getDependency(): ?string
     {
         return $this->dependency;
     }
@@ -50,7 +56,7 @@ class NotInstalled extends Logic implements DependencyError
     /**
      * @return string
      */
-    final public function getAction()
+    final public function getAction(): ?string
     {
         return $this->action;
     }

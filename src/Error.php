@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace axy\errors;
 
+use axy\backtrace\ExceptionTrace;
+
 /**
  * The basic error in the axy hierarchy
  *
@@ -20,19 +22,19 @@ interface Error
      *
      * @return string
      */
-    public function getOriginalFile();
+    public function getOriginalFile(): string;
 
     /**
      * Returns the line number of the original exception point
      *
      * @return int
      */
-    public function getOriginalLine();
+    public function getOriginalLine(): int;
 
     /**
      * Returns the truncated trace instance
      *
-     * @return \axy\backtrace\ExceptionTrace
+     * @return ExceptionTrace
      */
-    public function getTruncatedTrace();
+    public function getTruncatedTrace(): ExceptionTrace;
 }

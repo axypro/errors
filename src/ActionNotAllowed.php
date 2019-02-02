@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace axy\errors;
 
+use Exception;
+
 /**
  * This action is not allowed for this object
  *
@@ -29,10 +31,10 @@ class ActionNotAllowed extends Logic
      *        the object (or the object name)
      * @param string $reason [optional]
      *        a reason
-     * @param \Exception $previous
+     * @param Exception $previous
      * @param mixed $thrower
      */
-    public function __construct($action, $object, $reason = null, \Exception $previous = null, $thrower = null)
+    public function __construct($action, $object, string $reason = null, Exception $previous = null, $thrower = null)
     {
         $this->action = $action;
         $this->object = $object;
@@ -48,7 +50,7 @@ class ActionNotAllowed extends Logic
     /**
      * @return string
      */
-    final public function getAction()
+    final public function getAction(): string
     {
         return $this->action;
     }
@@ -64,7 +66,7 @@ class ActionNotAllowed extends Logic
     /**
      * @return string
      */
-    final public function getReason()
+    final public function getReason(): ?string
     {
         return $this->reason;
     }

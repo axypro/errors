@@ -44,11 +44,11 @@ trait TraceTruncate
     /**
      * Returns the filename of the original exception point
      *
-     * @return int
+     * @return string
      */
-    final public function getOriginalFile()
+    final public function getOriginalFile(): string
     {
-        return $this->truncatedTrace->originalFile;
+        return (string)$this->truncatedTrace->originalFile;
     }
 
     /**
@@ -56,17 +56,17 @@ trait TraceTruncate
      *
      * @return int
      */
-    final public function getOriginalLine()
+    final public function getOriginalLine(): int
     {
-        return $this->truncatedTrace->originalLine;
+        return (int)$this->truncatedTrace->originalLine;
     }
 
     /**
      * Returns the truncated trace
      *
-     * @return \axy\backtrace\ExceptionTrace
+     * @return ExceptionTrace
      */
-    final public function getTruncatedTrace()
+    final public function getTruncatedTrace(): ExceptionTrace
     {
         return $this->truncatedTrace;
     }
@@ -76,7 +76,7 @@ trait TraceTruncate
      *
      * @param mixed $thrower
      */
-    private function truncateTrace($thrower)
+    private function truncateTrace($thrower): void
     {
         /** @noinspection PhpUndefinedFieldInspection */
         /** @noinspection PhpUndefinedMethodInspection */
@@ -104,9 +104,9 @@ trait TraceTruncate
      * Creates an options list for truncate
      *
      * @param mixed $thrower
-     * @return array
+     * @return array|null
      */
-    private function createOptionsForTruncateTrace($thrower)
+    private function createOptionsForTruncateTrace($thrower): ?array
     {
         if ($thrower) {
             if (is_string($thrower)) {
@@ -157,7 +157,7 @@ trait TraceTruncate
     /**
      * The truncated trace
      *
-     * @var \axy\backtrace\ExceptionTrace
+     * @var ExceptionTrace
      */
     private $truncatedTrace;
 }

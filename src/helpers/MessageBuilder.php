@@ -31,7 +31,7 @@ trait MessageBuilder
      *        the error code
      * @return string
      */
-    private function createMessage($message, $code)
+    private function createMessage($message, int $code): string
     {
         if (is_array($message)) {
             if (!array_key_exists('code', $message)) {

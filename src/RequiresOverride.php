@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace axy\errors;
 
+use Exception;
+
 /**
  * A method requires override
  *
@@ -25,10 +27,10 @@ class RequiresOverride extends Logic implements Error
      *
      * @param string|boolean $method [optional]
      *        the method name (if TRUE - method where the exception was thrown)
-     * @param \Exception $previous [optional]
+     * @param Exception $previous [optional]
      * @param mixed $thrower [optional]
      */
-    public function __construct($method = true, \Exception $previous = null, $thrower = null)
+    public function __construct($method = true, Exception $previous = null, $thrower = null)
     {
         if ($method === true) {
             $trace = debug_backtrace();

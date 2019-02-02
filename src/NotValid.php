@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace axy\errors;
 
+use Exception;
+
 /**
  * A value is not valid for this action
  *
@@ -27,11 +29,15 @@ class NotValid extends Logic implements InvalidValue
      *        name of a variable who contains the value
      * @param string $errorMessage [optional]
      *        the error message
-     * @param \Exception $previous [optional]
+     * @param Exception $previous [optional]
      * @param mixed $thrower [optional]
      */
-    public function __construct($varName = null, $errorMessage = null, \Exception $previous = null, $thrower = null)
-    {
+    public function __construct(
+        ?string $varName = null,
+        ?string $errorMessage = null,
+        Exception $previous = null,
+        $thrower = null
+    ) {
         $message = [
             'varName' => $varName,
             'errorMessage' => $errorMessage,
@@ -44,7 +50,7 @@ class NotValid extends Logic implements InvalidValue
     /**
      * @return string
      */
-    final public function getVarName()
+    final public function getVarName(): ?string
     {
         return $this->varName;
     }
@@ -52,7 +58,7 @@ class NotValid extends Logic implements InvalidValue
     /**
      * @return string
      */
-    final public function getErrorMessage()
+    final public function getErrorMessage(): ?string
     {
         return $this->errorMessage;
     }
