@@ -7,13 +7,14 @@ declare(strict_types=1);
 
 namespace axy\errors\tests;
 
+use PHPUnit\Framework\TestCase;
 use axy\errors\ItemNotFound;
 use axy\errors\tests\tst\Container;
 
 /**
  * coversDefaultClass axy\errors\ItemNotFound
  */
-class ItemNotFoundTest extends \PHPUnit_Framework_TestCase
+class ItemNotFoundTest extends TestCase
 {
     /**
      * covers ::__construct

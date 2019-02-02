@@ -7,6 +7,7 @@ declare(strict_types=1);
 
 namespace axy\errors\tests;
 
+use PHPUnit\Framework\TestCase;
 use axy\errors\Opts;
 use axy\errors\ItemNotFound;
 use axy\errors\tests\tst\OptsHelper;
@@ -14,7 +15,7 @@ use axy\errors\tests\tst\OptsHelper;
 /**
  * coversDefaultClass axy\errors\Opts
  */
-class OptsTest extends \PHPUnit_Framework_TestCase
+class OptsTest extends TestCase
 {
     public function setUp()
     {

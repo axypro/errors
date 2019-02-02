@@ -7,12 +7,13 @@ declare(strict_types=1);
 
 namespace axy\errors\tests;
 
+use PHPUnit\Framework\TestCase;
 use axy\errors\AlreadyInited;
 
 /**
  * coversDefaultClass axy\errors\AlreadyInited
  */
-class AlreadyInitedTest extends \PHPUnit_Framework_TestCase
+class AlreadyInitedTest extends TestCase
 {
     /**
      * covers ::__construct

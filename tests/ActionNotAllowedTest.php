@@ -7,12 +7,13 @@ declare(strict_types=1);
 
 namespace axy\errors\tests;
 
+use PHPUnit\Framework\TestCase;
 use axy\errors\ActionNotAllowed;
 
 /**
  * coversDefaultClass axy\errors\ActionNotAllowed
  */
-class ActionNotAllowedTest extends \PHPUnit_Framework_TestCase
+class ActionNotAllowedTest extends TestCase
 {
     /**
      * covers ::__construct

@@ -7,12 +7,13 @@ declare(strict_types=1);
 
 namespace axy\errors\tests;
 
+use PHPUnit\Framework\TestCase;
 use axy\errors\ContainerReadOnly;
 
 /**
  * coversDefaultClass axy\errors\ContainerReadOnly
  */
-class ContainerReadOnlyTest extends \PHPUnit_Framework_TestCase
+class ContainerReadOnlyTest extends TestCase
 {
     /**
      * covers ::__construct

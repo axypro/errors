@@ -7,13 +7,14 @@ declare(strict_types=1);
 
 namespace axy\errors\tests;
 
+use PHPUnit\Framework\TestCase;
 use axy\errors\FieldNotExist;
 use axy\errors\tests\tst\Container;
 
 /**
  * coversDefaultClass axy\errors\FieldNotExist
  */
-class FieldNotExistTest extends \PHPUnit_Framework_TestCase
+class FieldNotExistTest extends TestCase
 {
     /**
      * covers ::__construct

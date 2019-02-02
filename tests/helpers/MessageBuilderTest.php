@@ -7,6 +7,7 @@ declare(strict_types=1);
 
 namespace axy\errors\tests\helpers;
 
+use PHPUnit\Framework\TestCase;
 use axy\errors\FieldNotExist;
 use axy\errors\tests\tst\Container;
 use axy\errors\tests\tst\CustomError;
@@ -15,7 +16,7 @@ use axy\errors\tests\tst\Invalid;
 /**
  * coversDefaultClass axy\errors\helpers\MessageBuilder
  */
-class MessageBuilderTest extends \PHPUnit_Framework_TestCase
+class MessageBuilderTest extends TestCase
 {
     /**
      * covers ::createMessage

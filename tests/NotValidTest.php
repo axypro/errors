@@ -7,12 +7,13 @@ declare(strict_types=1);
 
 namespace axy\errors\tests;
 
+use PHPUnit\Framework\TestCase;
 use axy\errors\NotValid;
 
 /**
  * coversDefaultClass axy\errors\NotValid
  */
-class NotValidTest extends \PHPUnit_Framework_TestCase
+class NotValidTest extends TestCase
 {
     /**
      * covers ::__construct

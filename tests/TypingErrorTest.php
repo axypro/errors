@@ -7,12 +7,13 @@ declare(strict_types=1);
 
 namespace axy\errors\tests;
 
+use PHPUnit\Framework\TestCase;
 use axy\errors\TypingError;
 
 /**
  * coversDefaultClass axy\errors\TypingError
  */
-class TypingErrorTest extends \PHPUnit_Framework_TestCase
+class TypingErrorTest extends TestCase
 {
     /**
      * covers ::__construct

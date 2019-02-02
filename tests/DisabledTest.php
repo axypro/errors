@@ -7,12 +7,13 @@ declare(strict_types=1);
 
 namespace axy\errors\tests;
 
+use PHPUnit\Framework\TestCase;
 use axy\errors\Disabled;
 
 /**
  * coversDefaultClass axy\errors\Disabled
  */
-class DisabledTest extends \PHPUnit_Framework_TestCase
+class DisabledTest extends TestCase
 {
     /**
      * covers ::__construct

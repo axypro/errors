@@ -7,12 +7,13 @@ declare(strict_types=1);
 
 namespace axy\errors\tests;
 
+use PHPUnit\Framework\TestCase;
 use axy\errors\Pointless;
 
 /**
  * coversDefaultClass axy\errors\Pointless
  */
-class PointlessTest extends \PHPUnit_Framework_TestCase
+class PointlessTest extends TestCase
 {
     /**
      * covers ::__construct

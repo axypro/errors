@@ -7,6 +7,7 @@ declare(strict_types=1);
 
 namespace axy\errors\tests\helpers;
 
+use PHPUnit\Framework\TestCase;
 use axy\errors\InvalidConfig;
 use axy\errors\tests\tst\errors\InvalidConfig as CustomInvalidConfig;
 use axy\errors\tests\tst\errors\Pointless;
@@ -18,7 +19,7 @@ use axy\errors\tests\tst\ContextTruncated;
 /**
  * coversDefaultClass axy\errors\helpers\TraceTruncate
  */
-class TraceTruncateTest extends \PHPUnit_Framework_TestCase
+class TraceTruncateTest extends TestCase
 {
     /**
      * test*() methods invoked via Reflection (has not key "file")

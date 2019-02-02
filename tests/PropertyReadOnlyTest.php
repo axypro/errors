@@ -7,12 +7,13 @@ declare(strict_types=1);
 
 namespace axy\errors\tests;
 
+use PHPUnit\Framework\TestCase;
 use axy\errors\PropertyReadOnly;
 
 /**
  * coversDefaultClass axy\errors\PropertyReadOnly
  */
-class PropertyReadOnlyTest extends \PHPUnit_Framework_TestCase
+class PropertyReadOnlyTest extends TestCase
 {
     /**
      * covers ::__construct

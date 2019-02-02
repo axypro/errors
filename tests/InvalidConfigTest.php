@@ -7,12 +7,13 @@ declare(strict_types=1);
 
 namespace axy\errors\tests;
 
+use PHPUnit\Framework\TestCase;
 use axy\errors\InvalidConfig;
 
 /**
  * coversDefaultClass axy\errors\InvalidConfig
  */
-class InvalidConfigTest extends \PHPUnit_Framework_TestCase
+class InvalidConfigTest extends TestCase
 {
     /**
      * covers ::__construct
