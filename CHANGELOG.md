@@ -3,6 +3,8 @@
 * Use PHP 7.1 (type hinting, strict types and etc)
 * Move classes to `src` dir
 * Remove native truncate stack feature (don't supported for PHP 7)
+* Use phpunit 7.5
+* Install dev-tools (phpunit, phpcs, phpmd) locally
 
 ### 1.0.5 (02.02.2019)
 

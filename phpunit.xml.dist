@@ -8,8 +8,8 @@
          convertWarningsToExceptions="true"
          processIsolation="false"
          stopOnFailure="false"
-         syntaxCheck="false"
          bootstrap="tests/bootstrap.php"
+         cacheResult="false"
 >
     <testsuites>
         <testsuite name="Base Test Suite">
@@ -18,9 +18,9 @@
     </testsuites>
 
     <filter>
-        <blacklist>
-            <directory>./vendor/</directory>
-        </blacklist>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src</directory>
+        </whitelist>
     </filter>
 </phpunit>
 
