@@ -13,6 +13,6 @@ namespace axy\errors;
  *
  * @link https://github.com/axypro/errors/blob/master/doc/errors.md documentation
  */
-interface ReadOnly extends Forbidden
+interface ReadOnlyException extends Forbidden
 {
 }
