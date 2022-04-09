@@ -15,7 +15,7 @@ use Exception;
  *
  * @link https://github.com/axypro/errors/blob/master/doc/classes/ContainerReadOnly.md documentation
  */
-class ContainerReadOnly extends Logic implements ReadOnly
+class ContainerReadOnly extends Logic implements ReadOnlyException
 {
     /**
      * {@inheritdoc}

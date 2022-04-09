@@ -29,7 +29,7 @@ class ContainerReadOnlyTest extends TestCase
         $this->assertInstanceOf('axy\errors\Error', $e);
         $this->assertInstanceOf('axy\errors\Logic', $e);
         $this->assertInstanceOf('axy\errors\Forbidden', $e);
-        $this->assertInstanceOf('axy\errors\ReadOnly', $e);
+        $this->assertInstanceOf('axy\errors\ReadOnlyException', $e);
         $this->assertSame('Cont', $e->getContainer());
         $this->assertSame($previous, $e->getPrevious());
         $this->assertSame('Cont is read-only', $e->getMessage());
