@@ -40,10 +40,5 @@
     },
     "archive": {
         "exclude": ["/tests/*", "/doc/*", "/cs.sh", "/phpmd.sh", "/*.xml.dist", "/CHANGELOG.md"]
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-main": "1.x-dev"
-        }
     }
 }
