@@ -15,7 +15,7 @@ use Exception;
  *
  * @link https://github.com/axypro/errors/blob/master/doc/classes/PropertyReadOnly.md documentation
  */
-class PropertyReadOnly extends Logic implements ReadOnly
+class PropertyReadOnly extends Logic implements ReadOnlyException
 {
     /**
      * {@inheritdoc}

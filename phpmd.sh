@@ -5,7 +5,6 @@ args="text phpmd.xml.dist"
 
 if [ "$#" -ne 0 ]; then
 ${cmd} "$@" ${args}
-else 
+else
 ${cmd} . ${args}
 fi
-
