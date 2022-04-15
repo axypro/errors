@@ -1,3 +1,7 @@
+### 2.1.0 (15.04.2022)
+
+* #4: PHP 8.1 compatibility
+
 ### 2.0.0 (02.02.2019)
 
 * Use PHP 7.1 (type hinting, strict types and etc)
