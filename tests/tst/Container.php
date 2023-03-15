@@ -1,7 +1,4 @@
 <?php
-/**
- * @package axy\errors
- */
 
 declare(strict_types=1);
 
@@ -44,7 +41,7 @@ class Container
      */
     public function __toString()
     {
-        return 'Container#'.$this->num;
+        return "Container#{$this->num}";
     }
 
     /**

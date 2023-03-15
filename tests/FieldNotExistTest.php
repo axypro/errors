@@ -1,7 +1,4 @@
 <?php
-/**
- * @package axy\errors
- */
 
 declare(strict_types=1);
 

@@ -1,8 +1,4 @@
 <?php
-/**
- * @package axy\errors
- * @author Oleg Grigoriev <go.vasac@gmail.com>
- */
 
 declare(strict_types=1);
 
@@ -33,8 +29,6 @@ trait ErrorTrait
     public function callErrorTrait($message, int $code, ?Exception $previous, $thrower): void
     {
         $message = $this->createMessage($message, $code);
-        /** @noinspection PhpUndefinedMethodInspection */
-        /** @noinspection PhpUndefinedClassInspection */
         parent::__construct($message, $code, $previous);
         $this->truncateTrace($thrower);
     }

@@ -1,7 +1,4 @@
 <?php
-/**
- * @package axy\errors
- */
 
 declare(strict_types=1);
 
@@ -29,6 +26,6 @@ class OptsHelper
 
     private static function throwError(): void
     {
-        throw new ItemNotFound;
+        throw new ItemNotFound();
     }
 }

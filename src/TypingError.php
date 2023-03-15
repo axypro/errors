@@ -1,8 +1,4 @@
 <?php
-/**
- * @package axy\errors
- * @author Oleg Grigoriev <go.vasac@gmail.com>
- */
 
 declare(strict_types=1);
 
@@ -37,7 +33,7 @@ class TypingError extends Logic implements InvalidValue
             if (count($expected) > 0) {
                 $last = array_pop($expected);
                 if (!empty($expected)) {
-                    $expected = implode(', ', $expected).' or '.$last;
+                    $expected = implode(', ', $expected) . " or $last";
                 } else {
                     $expected = $last;
                 }

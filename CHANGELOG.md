@@ -1,3 +1,8 @@
+### dev
+
+* PHP 8.1
+* Change structure and docker for development
+
 ### 2.1.0 (15.04.2022)
 
 * #4: PHP 8.1 compatibility

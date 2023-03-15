@@ -1,8 +1,4 @@
 <?php
-/**
- * @package axy\errors
- * @author Oleg Grigoriev <go.vasac@gmail.com>
- */
 
 declare(strict_types=1);
 
@@ -41,8 +37,8 @@ class InvalidFormat extends Logic
     ) {
         $this->value = $value;
         $this->type = $type;
-        $message= [
-            'value' => $this->brackets[0].$value.$this->brackets[1],
+        $message = [
+            'value' => $this->brackets[0] . $value . $this->brackets[1],
             'type' => $type ?: 'String',
         ];
         parent::__construct($message, 0, $previous, $thrower);

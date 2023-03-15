@@ -1,8 +1,4 @@
 <?php
-/**
- * @package axy\errors
- * @author Oleg Grigoriev <go.vasac@gmail.com>
- */
 
 declare(strict_types=1);
 
@@ -38,7 +34,7 @@ class RequiresOverride extends Logic implements Error
             if (isset($trace[1])) {
                 $trace = $trace[1];
                 if (!empty($trace['class'])) {
-                    $method .= $trace['class'].'::';
+                    $method .= $trace['class'] . '::';
                 }
                 if (!empty($trace['function'])) {
                     $method .= $trace['function'];

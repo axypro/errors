@@ -1,8 +1,5 @@
 <?php
-/**
- * @package axy\errors
- * @author Oleg Grigoriev <go.vasac@gmail.com>
- */
+
 /* @noinspection PhpMissingParentConstructorInspection */
 
 declare(strict_types=1);
